@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Protocol________project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type something" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XXc-s2-s5l">
+                                <rect key="frame" x="20" y="55" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipK-R1-1dP">
+                                <rect key="frame" x="163" y="109" width="51" height="31"/>
+                                <connections>
+                                    <action selector="tapAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="4FD-1v-bT8"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yob-nN-9FH">
+                                <rect key="frame" x="52" y="180" width="271" height="41"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                <state key="normal" title="go to second view controller"/>
+                                <connections>
+                                    <segue destination="LtX-t9-mIb" kind="presentation" id="A1U-Rv-APc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77820333075928061" green="0.81830452270117648" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="XXc-s2-s5l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="DdH-32-6XE"/>
+                            <constraint firstItem="XXc-s2-s5l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="ZHZ-5Q-aKE"/>
+                            <constraint firstItem="Yob-nN-9FH" firstAttribute="centerX" secondItem="ipK-R1-1dP" secondAttribute="centerX" id="cb6-Ic-6Ov"/>
+                            <constraint firstAttribute="trailing" secondItem="XXc-s2-s5l" secondAttribute="trailing" constant="20" id="h0V-z2-P63"/>
+                            <constraint firstItem="Yob-nN-9FH" firstAttribute="top" secondItem="ipK-R1-1dP" secondAttribute="bottom" constant="40" id="vlU-Nd-Gw1"/>
+                            <constraint firstItem="ipK-R1-1dP" firstAttribute="centerX" secondItem="XXc-s2-s5l" secondAttribute="centerX" id="xBg-Nj-0Gv"/>
+                            <constraint firstItem="ipK-R1-1dP" firstAttribute="top" secondItem="XXc-s2-s5l" secondAttribute="bottom" constant="24" id="zwH-U3-O4K"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZOz-Nc-zZo" appends="YES" id="sy7-Ix-erO"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="XXc-s2-s5l" id="Vob-6l-7Qu"/>
+                        <outlet property="toggleSwitch" destination="ipK-R1-1dP" id="LrI-jG-ZX4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZOz-Nc-zZo">
+                    <connections>
+                        <action selector="tapAction:" destination="BYZ-38-t0r" id="6xY-YD-scG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="4" y="85.907046476761622"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="c9u-lu-Yiv">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="LtX-t9-mIb" customClass="SecondViewController" customModule="Protocol________project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KEx-2b-OeR"/>
+                        <viewControllerLayoutGuide type="bottom" id="XQc-kG-gaX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RGy-F0-Nbf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZU-7F-2ig">
+                                <rect key="frame" x="20" y="140" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldEditingChangedAction:" destination="LtX-t9-mIb" eventType="editingChanged" id="R3n-kg-WOB"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poo-q2-ayX">
+                                <rect key="frame" x="8" y="28" width="25" height="25"/>
+                                <state key="normal" image="icon_back"/>
+                                <connections>
+                                    <action selector="dismissAction:" destination="LtX-t9-mIb" eventType="touchUpInside" id="z5q-rH-oZx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.63512213939678674" green="0.66384129614569276" blue="1" alpha="0.5974422089041096" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iZU-7F-2ig" secondAttribute="trailing" constant="20" id="AYG-4f-Mm9"/>
+                            <constraint firstItem="iZU-7F-2ig" firstAttribute="leading" secondItem="RGy-F0-Nbf" secondAttribute="leading" constant="20" id="FQ1-iS-PQ7"/>
+                            <constraint firstItem="iZU-7F-2ig" firstAttribute="top" secondItem="KEx-2b-OeR" secondAttribute="bottom" constant="120" id="Odj-VA-clE"/>
+                            <constraint firstItem="poo-q2-ayX" firstAttribute="leading" secondItem="RGy-F0-Nbf" secondAttribute="leading" constant="8" id="Pda-mX-llW"/>
+                            <constraint firstItem="poo-q2-ayX" firstAttribute="top" secondItem="KEx-2b-OeR" secondAttribute="bottom" constant="8" id="icV-P8-QgU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="iZU-7F-2ig" id="aJX-gY-taG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ypz-jN-jPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_back" width="25" height="25"/>
+    </resources>
+</document>
