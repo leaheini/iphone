@@ -1,0 +1,6 @@
+framework module Pods_AutoCompleteProject {
+  umbrella header "Pods-AutoCompleteProject-umbrella.h"
+
+  export *
+  module * { export * }
+}

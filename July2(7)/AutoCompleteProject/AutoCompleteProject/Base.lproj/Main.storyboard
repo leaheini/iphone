@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8QS-97-S33">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--מיקום נוכחי-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutoCompleteProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FC1-Ho-izv">
+                                <rect key="frame" x="16" y="36" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxb-Nk-Mc2">
+                                <rect key="frame" x="16" y="73" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gn-DC-LXt">
+                                <rect key="frame" x="161" y="117.5" width="52" height="30"/>
+                                <state key="normal" title="get info"/>
+                                <connections>
+                                    <action selector="getInfoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a3P-ur-fGH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kxb-Nk-Mc2" secondAttribute="trailing" constant="16" id="F16-oE-tC0"/>
+                            <constraint firstItem="FC1-Ho-izv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="Ffp-NO-u9m"/>
+                            <constraint firstItem="Kxb-Nk-Mc2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="PSJ-uI-eCb"/>
+                            <constraint firstItem="FC1-Ho-izv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="QHG-8w-64C"/>
+                            <constraint firstItem="8gn-DC-LXt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nNC-g0-sXB"/>
+                            <constraint firstItem="Kxb-Nk-Mc2" firstAttribute="top" secondItem="FC1-Ho-izv" secondAttribute="bottom" constant="16" id="oOa-QN-gMl"/>
+                            <constraint firstItem="8gn-DC-LXt" firstAttribute="top" secondItem="Kxb-Nk-Mc2" secondAttribute="bottom" constant="24" id="soh-8A-ufZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="מיקום נוכחי" image="icon_current" id="658-4p-kAW"/>
+                    <connections>
+                        <outlet property="googleAddressLabel" destination="Kxb-Nk-Mc2" id="khr-yg-efB"/>
+                        <outlet property="nameLabel" destination="FC1-Ho-izv" id="rUX-xt-rkd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="71.514242878560722"/>
+        </scene>
+        <!--השלמה אוטומטית-->
+        <scene sceneID="Qkt-ug-3VC">
+            <objects>
+                <viewController id="KcV-SA-n14" customClass="SecondViewController" customModule="AutoCompleteProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m1w-c3-aLY"/>
+                        <viewControllerLayoutGuide type="bottom" id="M2o-AU-kjD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NIW-eb-LT9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="insert Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dw7-pO-5ju">
+                                <rect key="frame" x="16" y="36" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dw7-pO-5ju" firstAttribute="top" secondItem="m1w-c3-aLY" secondAttribute="bottom" constant="16" id="LId-d2-xc7"/>
+                            <constraint firstItem="Dw7-pO-5ju" firstAttribute="leading" secondItem="NIW-eb-LT9" secondAttribute="leading" constant="16" id="SYV-Cx-5TR"/>
+                            <constraint firstAttribute="trailing" secondItem="Dw7-pO-5ju" secondAttribute="trailing" constant="16" id="vVc-Mx-17k"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="השלמה אוטומטית" image="icon_address" id="HGh-oW-mR7"/>
+                    <connections>
+                        <outlet property="textField" destination="Dw7-pO-5ju" id="MOs-2E-7Wv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GLN-OE-lgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="72"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="WEb-yj-Dfo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8QS-97-S33" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="hA3-sY-xb8">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KcV-SA-n14" kind="relationship" relationship="viewControllers" id="JwM-H3-AgH"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tBB-y7-ZWg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZC-WV-aIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="71.514242878560722"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_address" width="25" height="25"/>
+        <image name="icon_current" width="25" height="25"/>
+    </resources>
+</document>
