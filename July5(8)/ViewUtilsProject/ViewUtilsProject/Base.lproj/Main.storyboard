@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ViewUtilsProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBM-Pq-KGl">
+                                <rect key="frame" x="16" y="147" width="343" height="152"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Q1-PJ-hes">
+                                        <rect key="frame" x="8" y="75" width="87" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="buttonPresed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4PZ-pG-8Jn"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IfU-nf-OLP">
+                                        <rect key="frame" x="103" y="12" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.13863740179682316" green="0.23301243549309569" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.29994381635453593" blue="0.87680809768200119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aM9-cd-Ya8">
+                                <rect key="frame" x="163" y="52" width="51" height="31"/>
+                                <color key="tintColor" red="1" green="0.1702658474449259" blue="0.16222019539899002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="onTintColor" red="0.69059877739999997" green="1" blue="0.93215205720000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.1886887107318978" green="0.39839784263959388" blue="0.15469589046699869" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="isHiddenAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="fWn-eC-7rT"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="rqD-hI-QwK">
+                                <rect key="frame" x="14" y="315" width="347" height="73"/>
+                                <connections>
+                                    <action selector="alphaSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="hNz-w8-Fgx"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WMJ-KH-XRG">
+                                <rect key="frame" x="14" y="419" width="347" height="73"/>
+                                <color key="minimumTrackTintColor" red="0.074668050639793829" green="0.31255948604060912" blue="0.05283582488407542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="alphaBackgroundAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="YoP-W9-A5q"/>
+                                </connections>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jk-kK-tiT">
+                                <rect key="frame" x="33" y="499" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchAction2:" destination="BYZ-38-t0r" eventType="valueChanged" id="dww-93-YbT"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.77364558295225483" blue="0.14547543567098276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aM9-cd-Ya8" firstAttribute="centerX" secondItem="NBM-Pq-KGl" secondAttribute="centerX" id="7kN-2M-PBU"/>
+                            <constraint firstItem="WMJ-KH-XRG" firstAttribute="width" secondItem="rqD-hI-QwK" secondAttribute="width" id="BmK-vk-4fg"/>
+                            <constraint firstItem="rqD-hI-QwK" firstAttribute="top" secondItem="NBM-Pq-KGl" secondAttribute="bottom" constant="16" id="DQt-gG-GIG"/>
+                            <constraint firstItem="WMJ-KH-XRG" firstAttribute="centerX" secondItem="rqD-hI-QwK" secondAttribute="centerX" id="Kj2-XF-a2X"/>
+                            <constraint firstItem="NBM-Pq-KGl" firstAttribute="top" secondItem="aM9-cd-Ya8" secondAttribute="bottom" constant="64" id="OEf-DB-oNs"/>
+                            <constraint firstItem="aM9-cd-Ya8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="W5z-QQ-vgm"/>
+                            <constraint firstItem="WMJ-KH-XRG" firstAttribute="top" secondItem="rqD-hI-QwK" secondAttribute="bottom" constant="32" id="XhV-h7-VCC"/>
+                            <constraint firstItem="NBM-Pq-KGl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="XwG-Sz-XhS"/>
+                            <constraint firstAttribute="trailing" secondItem="rqD-hI-QwK" secondAttribute="trailing" constant="16" id="bgw-Jm-h9R"/>
+                            <constraint firstAttribute="trailing" secondItem="NBM-Pq-KGl" secondAttribute="trailing" constant="16" id="e9B-ju-UFK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WMJ-KH-XRG" secondAttribute="bottom" constant="176" id="iQo-dQ-3EW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NBM-Pq-KGl" secondAttribute="bottom" constant="368" id="sOB-hm-Ej6"/>
+                            <constraint firstItem="rqD-hI-QwK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="sRg-87-uf0"/>
+                            <constraint firstItem="WMJ-KH-XRG" firstAttribute="height" secondItem="rqD-hI-QwK" secondAttribute="height" id="y4q-0T-a6Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alphaSlider" destination="rqD-hI-QwK" id="rau-KR-oA2"/>
+                        <outlet property="hideSwitch" destination="aM9-cd-Ya8" id="qce-Sx-jwv"/>
+                        <outlet property="uiView" destination="NBM-Pq-KGl" id="Xge-KI-2ZG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+</document>
