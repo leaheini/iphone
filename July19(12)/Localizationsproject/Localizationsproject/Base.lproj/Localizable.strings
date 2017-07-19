@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Localizationsproject
+
+  Created by hackeru on 19/07/2017.
+  Copyright © 2017 com.hackeru. All rights reserved.
+*/
+
+"key" = "value";
+"mainvc_title_label_text" = "hello world";
+"mainvc_second_label_text" = "Leah";
+"mainvc_third_label_text" = "ipone";

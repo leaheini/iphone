@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Localizationsproject
+
+  Created by hackeru on 19/07/2017.
+  Copyright © 2017 com.hackeru. All rights reserved.
+*/
+
+"key" = "ערך";
+"mainvc_title_label_text" = "שלום עולם";
+"mainvc_second_label_text" = "לאה";
+"mainvc_third_label_text" = "אייפון";
+
