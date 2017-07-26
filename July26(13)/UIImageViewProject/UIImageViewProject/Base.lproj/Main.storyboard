@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIImageViewProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_lamp" translatesAutoresizingMaskIntoConstraints="NO" id="7C1-Ht-A6P">
+                                <rect key="frame" x="32" y="36" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="kGx-0a-Oep"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="150" id="qrV-Lb-yHo"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" image="image_view" translatesAutoresizingMaskIntoConstraints="NO" id="rmv-Rm-n2m">
+                                <rect key="frame" x="16" y="523" width="343" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="DdL-ia-Okv"/>
+                                </constraints>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-unchecked_checkbox_filled" highlightedImage="icons8-checked_checkbox_filled" translatesAutoresizingMaskIntoConstraints="NO" id="sMc-yY-7c2">
+                                <rect key="frame" x="338" y="164" width="25" height="25"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hrI-ql-4j6" appends="YES" id="aoA-PX-E9t"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-checked_checkbox_filled" translatesAutoresizingMaskIntoConstraints="NO" id="UaH-uD-7rN" customClass="CheckBox" customModule="UIImageViewProject" customModuleProvider="target">
+                                <rect key="frame" x="338" y="221" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Jlu-Nd-w8e"/>
+                                    <constraint firstAttribute="height" constant="25" id="MSd-jh-9fR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="דרך 2 subClass checkBox" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOb-su-5af">
+                                <rect key="frame" x="107.5" y="221" width="193.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="מסכים לתנאי  שימוש דרך 1 דרך story" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfg-jO-Z6K">
+                                <rect key="frame" x="49" y="166" width="252" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7C1-Ht-A6P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="38L-L1-6Wc"/>
+                            <constraint firstAttribute="trailing" secondItem="rmv-Rm-n2m" secondAttribute="trailing" constant="16" id="484-xN-9i1"/>
+                            <constraint firstItem="UaH-uD-7rN" firstAttribute="top" secondItem="sMc-yY-7c2" secondAttribute="bottom" constant="32" id="8OM-zd-EpO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rmv-Rm-n2m" secondAttribute="bottom" constant="16" id="Hjy-QE-Qzz"/>
+                            <constraint firstItem="Yfg-jO-Z6K" firstAttribute="centerY" secondItem="sMc-yY-7c2" secondAttribute="centerY" id="VAe-QQ-CQG"/>
+                            <constraint firstItem="7C1-Ht-A6P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="WXN-Kn-Ele"/>
+                            <constraint firstItem="UaH-uD-7rN" firstAttribute="leading" secondItem="gOb-su-5af" secondAttribute="trailing" constant="37" id="aa4-vt-ccx"/>
+                            <constraint firstAttribute="trailing" secondItem="UaH-uD-7rN" secondAttribute="trailing" constant="12" id="d3h-Ws-jjA"/>
+                            <constraint firstItem="sMc-yY-7c2" firstAttribute="leading" secondItem="Yfg-jO-Z6K" secondAttribute="trailing" constant="37" id="idE-w5-QP6"/>
+                            <constraint firstItem="gOb-su-5af" firstAttribute="top" secondItem="Yfg-jO-Z6K" secondAttribute="bottom" constant="34" id="lls-o3-gYN"/>
+                            <constraint firstItem="rmv-Rm-n2m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="ruq-pO-yyj"/>
+                            <constraint firstAttribute="trailing" secondItem="sMc-yY-7c2" secondAttribute="trailing" constant="12" id="sHK-DB-SoG"/>
+                            <constraint firstItem="sMc-yY-7c2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="144" id="wFb-lG-4t1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hrI-ql-4j6">
+                    <connections>
+                        <action selector="tapAction:" destination="BYZ-38-t0r" id="TPy-D5-XN6"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-checked_checkbox_filled" width="25" height="25"/>
+        <image name="icons8-unchecked_checkbox_filled" width="25" height="25"/>
+        <image name="image_lamp" width="100" height="100"/>
+        <image name="image_view" width="600" height="399"/>
+    </resources>
+</document>
