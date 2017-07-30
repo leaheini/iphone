@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6DA794FE1F2DAF3900359044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA794FD1F2DAF3900359044 /* AppDelegate.swift */; };
+		6DA795001F2DAF3900359044 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA794FF1F2DAF3900359044 /* ViewController.swift */; };
+		6DA795031F2DAF3900359044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA795011F2DAF3900359044 /* Main.storyboard */; };
+		6DA795051F2DAF3900359044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA795041F2DAF3900359044 /* Assets.xcassets */; };
+		6DA795081F2DAF3900359044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA795061F2DAF3900359044 /* LaunchScreen.storyboard */; };
+		7250C3BB10FF7E3B92BCA5AF /* Pods_SDWebIMageAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E587CACB4050F7A3713FC884 /* Pods_SDWebIMageAnimation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		207BB9853FA8B9F48C6801E2 /* Pods-SDWebIMageAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDWebIMageAnimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDWebIMageAnimation/Pods-SDWebIMageAnimation.release.xcconfig"; sourceTree = "<group>"; };
+		6DA794FA1F2DAF3900359044 /* SDWebIMageAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDWebIMageAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA794FD1F2DAF3900359044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6DA794FF1F2DAF3900359044 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DA795021F2DAF3900359044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6DA795041F2DAF3900359044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6DA795071F2DAF3900359044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6DA795091F2DAF3900359044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DE6FABB060EF2B0B99205A9 /* Pods-SDWebIMageAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDWebIMageAnimation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDWebIMageAnimation/Pods-SDWebIMageAnimation.debug.xcconfig"; sourceTree = "<group>"; };
+		E587CACB4050F7A3713FC884 /* Pods_SDWebIMageAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDWebIMageAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DA794F71F2DAF3900359044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7250C3BB10FF7E3B92BCA5AF /* Pods_SDWebIMageAnimation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56D6DB99EDC751855E02FD3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E587CACB4050F7A3713FC884 /* Pods_SDWebIMageAnimation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DA794F11F2DAF3900359044 = {
+			isa = PBXGroup;
+			children = (
+				6DA794FC1F2DAF3900359044 /* SDWebIMageAnimation */,
+				6DA794FB1F2DAF3900359044 /* Products */,
+				AB909923BCF3FFFBF1AB358F /* Pods */,
+				56D6DB99EDC751855E02FD3A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6DA794FB1F2DAF3900359044 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6DA794FA1F2DAF3900359044 /* SDWebIMageAnimation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6DA794FC1F2DAF3900359044 /* SDWebIMageAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				6DA794FD1F2DAF3900359044 /* AppDelegate.swift */,
+				6DA794FF1F2DAF3900359044 /* ViewController.swift */,
+				6DA795011F2DAF3900359044 /* Main.storyboard */,
+				6DA795041F2DAF3900359044 /* Assets.xcassets */,
+				6DA795061F2DAF3900359044 /* LaunchScreen.storyboard */,
+				6DA795091F2DAF3900359044 /* Info.plist */,
+			);
+			path = SDWebIMageAnimation;
+			sourceTree = "<group>";
+		};
+		AB909923BCF3FFFBF1AB358F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DE6FABB060EF2B0B99205A9 /* Pods-SDWebIMageAnimation.debug.xcconfig */,
+				207BB9853FA8B9F48C6801E2 /* Pods-SDWebIMageAnimation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6DA794F91F2DAF3900359044 /* SDWebIMageAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DA7950C1F2DAF3900359044 /* Build configuration list for PBXNativeTarget "SDWebIMageAnimation" */;
+			buildPhases = (
+				18ECD87097FA1D9C934E2AA6 /* [CP] Check Pods Manifest.lock */,
+				6DA794F61F2DAF3900359044 /* Sources */,
+				6DA794F71F2DAF3900359044 /* Frameworks */,
+				6DA794F81F2DAF3900359044 /* Resources */,
+				23E746631BD949AD1E9D9D64 /* [CP] Embed Pods Frameworks */,
+				A68E0E8590710FEF1299C319 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDWebIMageAnimation;
+			productName = SDWebIMageAnimation;
+			productReference = 6DA794FA1F2DAF3900359044 /* SDWebIMageAnimation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DA794F21F2DAF3900359044 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = com.hackeru;
+				TargetAttributes = {
+					6DA794F91F2DAF3900359044 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6DA794F51F2DAF3900359044 /* Build configuration list for PBXProject "SDWebIMageAnimation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6DA794F11F2DAF3900359044;
+			productRefGroup = 6DA794FB1F2DAF3900359044 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6DA794F91F2DAF3900359044 /* SDWebIMageAnimation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6DA794F81F2DAF3900359044 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA795081F2DAF3900359044 /* LaunchScreen.storyboard in Resources */,
+				6DA795051F2DAF3900359044 /* Assets.xcassets in Resources */,
+				6DA795031F2DAF3900359044 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18ECD87097FA1D9C934E2AA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		23E746631BD949AD1E9D9D64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDWebIMageAnimation/Pods-SDWebIMageAnimation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A68E0E8590710FEF1299C319 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDWebIMageAnimation/Pods-SDWebIMageAnimation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6DA794F61F2DAF3900359044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA795001F2DAF3900359044 /* ViewController.swift in Sources */,
+				6DA794FE1F2DAF3900359044 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6DA795011F2DAF3900359044 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DA795021F2DAF3900359044 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6DA795061F2DAF3900359044 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DA795071F2DAF3900359044 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6DA7950A1F2DAF3900359044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6DA7950B1F2DAF3900359044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6DA7950D1F2DAF3900359044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DE6FABB060EF2B0B99205A9 /* Pods-SDWebIMageAnimation.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SDWebIMageAnimation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackeru.SDWebIMageAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6DA7950E1F2DAF3900359044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 207BB9853FA8B9F48C6801E2 /* Pods-SDWebIMageAnimation.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SDWebIMageAnimation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackeru.SDWebIMageAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6DA794F51F2DAF3900359044 /* Build configuration list for PBXProject "SDWebIMageAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA7950A1F2DAF3900359044 /* Debug */,
+				6DA7950B1F2DAF3900359044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DA7950C1F2DAF3900359044 /* Build configuration list for PBXNativeTarget "SDWebIMageAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA7950D1F2DAF3900359044 /* Debug */,
+				6DA7950E1F2DAF3900359044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DA794F21F2DAF3900359044 /* Project object */;
+}

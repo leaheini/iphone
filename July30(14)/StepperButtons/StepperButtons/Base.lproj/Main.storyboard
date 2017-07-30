@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StepperButtons" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywX-v4-lSm">
+                                <rect key="frame" x="233.5" y="67" width="25" height="25"/>
+                                <state key="normal" image="icons8-plus">
+                                    <color key="titleColor" red="0.26570269210000003" green="0.19785262219999999" blue="0.41840498100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" image="icons8-plus_filled"/>
+                                <connections>
+                                    <action selector="btnCounterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PPM-Ad-A0F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35y-Zy-S2P">
+                                <rect key="frame" x="157.5" y="60" width="60" height="38.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="E0E-vv-RO5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zOS-Bk-DQk">
+                                <rect key="frame" x="163" y="132" width="51" height="31"/>
+                                <color key="onTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="H70-HE-LKZ"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eK1-X2-OxP">
+                                <rect key="frame" x="116.5" y="67" width="25" height="25"/>
+                                <state key="normal" image="icons8-minus"/>
+                                <state key="highlighted" image="icons8-minus_filled"/>
+                                <connections>
+                                    <action selector="btnCounterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c57-Sh-acE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="35y-Zy-S2P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5D4-G9-abM"/>
+                            <constraint firstItem="ywX-v4-lSm" firstAttribute="leading" secondItem="35y-Zy-S2P" secondAttribute="trailing" constant="16" id="8XW-f3-RqZ"/>
+                            <constraint firstItem="eK1-X2-OxP" firstAttribute="centerY" secondItem="35y-Zy-S2P" secondAttribute="centerY" id="I4L-Ma-wgT"/>
+                            <constraint firstItem="35y-Zy-S2P" firstAttribute="leading" secondItem="eK1-X2-OxP" secondAttribute="trailing" constant="16" id="IrN-LS-AFh"/>
+                            <constraint firstItem="ywX-v4-lSm" firstAttribute="centerY" secondItem="35y-Zy-S2P" secondAttribute="centerY" id="fZM-Jo-5eS"/>
+                            <constraint firstItem="35y-Zy-S2P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="iFm-RQ-4dx"/>
+                            <constraint firstItem="zOS-Bk-DQk" firstAttribute="centerX" secondItem="35y-Zy-S2P" secondAttribute="centerX" id="qTc-Ck-UMx"/>
+                            <constraint firstItem="zOS-Bk-DQk" firstAttribute="top" secondItem="35y-Zy-S2P" secondAttribute="bottom" constant="33.5" id="rFr-Lo-kl0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelCounter" destination="35y-Zy-S2P" id="oSx-t1-bII"/>
+                        <outlet property="minusBtn" destination="eK1-X2-OxP" id="58l-Ed-MRu"/>
+                        <outlet property="mySwitch" destination="zOS-Bk-DQk" id="gHk-IZ-bE4"/>
+                        <outlet property="plusBtn" destination="ywX-v4-lSm" id="yo1-Cl-Dsh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-minus" width="25" height="25"/>
+        <image name="icons8-minus_filled" width="25" height="25"/>
+        <image name="icons8-plus" width="25" height="25"/>
+        <image name="icons8-plus_filled" width="25" height="25"/>
+    </resources>
+</document>
