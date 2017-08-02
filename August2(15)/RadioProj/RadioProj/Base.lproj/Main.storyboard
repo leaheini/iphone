@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RadioProj" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" minimumValueImage="icons8-mute" maximumValueImage="icons8-room_sound" translatesAutoresizingMaskIntoConstraints="NO" id="J70-aF-r7r">
+                                <rect key="frame" x="46" y="269" width="228" height="31"/>
+                                <color key="thumbTintColor" red="0.031372549019607843" green="0.55050998263888884" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="volumeSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="DZ4-dR-WQy"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8m-bd-NKM">
+                                <rect key="frame" x="35" y="187" width="50" height="50"/>
+                                <state key="normal" image="icons8-play_round"/>
+                                <state key="highlighted" image="icons8-circled_play_filled-1"/>
+                                <connections>
+                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ka-f7-iLK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zI-6v-sBp">
+                                <rect key="frame" x="235" y="187" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="iAA-tc-V1r"/>
+                                </constraints>
+                                <state key="normal" image="icons8-circled_pause"/>
+                                <state key="highlighted" image="icons8-circled_play_filled"/>
+                                <connections>
+                                    <action selector="pauseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ac4-zY-xMW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbN-Fh-7mU">
+                                <rect key="frame" x="116" y="202" width="87.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrd-yl-Jj2">
+                                <rect key="frame" x="0.0" y="302" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xx0-ds-4ug"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="t00-CC-Rj8"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.031372549019607843" green="0.88075086805555558" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HbN-Fh-7mU" firstAttribute="centerY" secondItem="6zI-6v-sBp" secondAttribute="centerY" id="4S5-70-Qx5"/>
+                            <constraint firstItem="J70-aF-r7r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6fx-h8-2ez"/>
+                            <constraint firstItem="J70-aF-r7r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ad4-Vw-6in"/>
+                            <constraint firstAttribute="trailing" secondItem="lrd-yl-Jj2" secondAttribute="trailing" id="Fma-sw-krt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J70-aF-r7r" secondAttribute="trailing" constant="32" id="Hle-cl-qaw"/>
+                            <constraint firstItem="V8m-bd-NKM" firstAttribute="centerX" secondItem="J70-aF-r7r" secondAttribute="centerX" constant="-100" id="LAe-XG-ML0"/>
+                            <constraint firstItem="6zI-6v-sBp" firstAttribute="centerX" secondItem="J70-aF-r7r" secondAttribute="centerX" constant="100" id="Lct-bV-dtB"/>
+                            <constraint firstItem="HbN-Fh-7mU" firstAttribute="centerX" secondItem="J70-aF-r7r" secondAttribute="centerX" id="SnH-lM-TQD"/>
+                            <constraint firstItem="J70-aF-r7r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="Sxv-Vy-vr7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lrd-yl-Jj2" secondAttribute="bottom" constant="50" id="j2e-sd-LKH"/>
+                            <constraint firstItem="lrd-yl-Jj2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kXS-iy-k3d"/>
+                            <constraint firstItem="J70-aF-r7r" firstAttribute="top" secondItem="6zI-6v-sBp" secondAttribute="bottom" constant="32" id="nmP-j1-4wi"/>
+                            <constraint firstItem="V8m-bd-NKM" firstAttribute="centerY" secondItem="6zI-6v-sBp" secondAttribute="centerY" id="sxe-eh-75m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="6zI-6v-sBp" id="clK-ER-Lku"/>
+                        <outlet property="playButton" destination="V8m-bd-NKM" id="ncc-ic-ITb"/>
+                        <outlet property="statusLabel" destination="HbN-Fh-7mU" id="vwl-3J-P3x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-circled_pause" width="50" height="50"/>
+        <image name="icons8-circled_play_filled" width="50" height="50"/>
+        <image name="icons8-circled_play_filled-1" width="50" height="50"/>
+        <image name="icons8-mute" width="25" height="25"/>
+        <image name="icons8-play_round" width="50" height="50"/>
+        <image name="icons8-room_sound" width="25" height="25"/>
+    </resources>
+</document>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Date picker-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Pickers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="EY2-yY-TWL">
+                                <rect key="frame" x="0.0" y="28" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="523353338.55365801">
+                                    <!--2017-08-02 07:55:38 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateChangedAction:" destination="9pv-A4-QxB" eventType="valueChanged" id="oL4-TC-wpX"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSs-wE-jmT">
+                                <rect key="frame" x="169" y="294" width="37" height="21.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EY2-yY-TWL" secondAttribute="trailing" id="LpC-d1-OaA"/>
+                            <constraint firstItem="gSs-wE-jmT" firstAttribute="centerX" secondItem="EY2-yY-TWL" secondAttribute="centerX" id="MId-4l-hRS"/>
+                            <constraint firstItem="EY2-yY-TWL" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="MZb-8a-R2x"/>
+                            <constraint firstItem="EY2-yY-TWL" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Z2w-3A-NUu"/>
+                            <constraint firstItem="gSs-wE-jmT" firstAttribute="top" secondItem="EY2-yY-TWL" secondAttribute="bottom" constant="50" id="sFX-s8-l1V"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Date picker" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="datePicker" destination="EY2-yY-TWL" id="6GU-z9-joN"/>
+                        <outlet property="label" destination="gSs-wE-jmT" id="eVo-z0-UUf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--macOS Names-->
+        <scene sceneID="9Hx-M4-ovg">
+            <objects>
+                <viewController id="Usq-7e-CBQ" customClass="MacOSXViewController" customModule="Pickers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uJB-DS-0y2"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ox-Mt-jbg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZaK-AC-Taz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBA-Pw-iGC">
+                                <rect key="frame" x="0.0" y="28" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Usq-7e-CBQ" id="dIH-8m-Apf"/>
+                                    <outlet property="delegate" destination="Usq-7e-CBQ" id="Ufn-tS-4qG"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RBA-Pw-iGC" secondAttribute="trailing" id="Djd-sl-0Oa"/>
+                            <constraint firstItem="RBA-Pw-iGC" firstAttribute="top" secondItem="uJB-DS-0y2" secondAttribute="bottom" constant="8" id="Epd-nO-F3g"/>
+                            <constraint firstItem="RBA-Pw-iGC" firstAttribute="leading" secondItem="ZaK-AC-Taz" secondAttribute="leading" id="UzQ-sH-DeI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="macOS Names" id="tTl-UR-SbV"/>
+                    <connections>
+                        <outlet property="osNamesPickerView" destination="RBA-Pw-iGC" id="h0D-xd-LRN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IC7-2g-nZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36" y="772"/>
+        </scene>
+        <!--Picker view-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Pickers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtb-wy-Tct">
+                                <rect key="frame" x="166.5" y="277" width="41" height="24.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6W-KN-uSk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="N6W-KN-uSk" secondAttribute="trailing" id="9YX-qN-eUm"/>
+                            <constraint firstItem="N6W-KN-uSk" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="BR9-K2-nSb"/>
+                            <constraint firstItem="Qtb-wy-Tct" firstAttribute="centerX" secondItem="N6W-KN-uSk" secondAttribute="centerX" id="c3y-fc-EYt"/>
+                            <constraint firstItem="N6W-KN-uSk" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="pL7-zI-FtD"/>
+                            <constraint firstItem="Qtb-wy-Tct" firstAttribute="top" secondItem="N6W-KN-uSk" secondAttribute="bottom" constant="33" id="u44-vI-UKX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Picker view" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="demoPickerView" destination="N6W-KN-uSk" id="uHQ-dp-Zwc"/>
+                        <outlet property="label" destination="Qtb-wy-Tct" id="dkS-a5-JoA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Names-->
+        <scene sceneID="I07-y4-6Xw">
+            <objects>
+                <viewController id="pqD-U5-zYa" customClass="NamesViewController" customModule="Pickers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u2H-ii-rX4"/>
+                        <viewControllerLayoutGuide type="bottom" id="wlX-FC-CAe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EdV-kD-wHi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6D-Qi-Uzk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="pqD-U5-zYa" id="2vM-pi-tGZ"/>
+                                    <outlet property="delegate" destination="pqD-U5-zYa" id="WBX-D4-GiR"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L6D-Qi-Uzk" firstAttribute="leading" secondItem="EdV-kD-wHi" secondAttribute="leading" id="AiS-Eb-f5p"/>
+                            <constraint firstAttribute="trailing" secondItem="L6D-Qi-Uzk" secondAttribute="trailing" id="FG3-J3-8qN"/>
+                            <constraint firstItem="L6D-Qi-Uzk" firstAttribute="top" secondItem="u2H-ii-rX4" secondAttribute="bottom" constant="8" id="fCw-cb-IJg"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Names" id="91D-8S-KQ2"/>
+                    <connections>
+                        <outlet property="namesPickerView" destination="L6D-Qi-Uzk" id="JHw-oT-t5t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLG-pU-dht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-786" y="163"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Usq-7e-CBQ" kind="relationship" relationship="viewControllers" id="XsG-R7-LSY"/>
+                        <segue destination="pqD-U5-zYa" kind="relationship" relationship="viewControllers" id="zRU-La-4G1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>

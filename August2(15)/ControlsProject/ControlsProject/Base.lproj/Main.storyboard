@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ControlsProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3C0-PC-TCm">
+                                <rect key="frame" x="163" y="36" width="51" height="31"/>
+                                <color key="onTintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="mySwitchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tep-kw-9s6"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhN-dg-sTk">
+                                <rect key="frame" x="166" y="107" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1l-ni-d0S">
+                                <rect key="frame" x="11" y="41" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaA-bt-xIa">
+                                <rect key="frame" x="30.5" y="70" width="51" height="31"/>
+                            </switch>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="UxU-6C-LEo">
+                                <rect key="frame" x="140" y="198" width="94" height="29"/>
+                                <color key="tintColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="stepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="eXw-X3-7vF"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm3-4C-tLK">
+                                <rect key="frame" x="166" y="235" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HhN-dg-sTk" firstAttribute="top" secondItem="3C0-PC-TCm" secondAttribute="bottom" constant="40" id="0qb-qU-zOE"/>
+                            <constraint firstItem="HhN-dg-sTk" firstAttribute="centerX" secondItem="3C0-PC-TCm" secondAttribute="centerX" id="4kU-vI-p0w"/>
+                            <constraint firstItem="P1l-ni-d0S" firstAttribute="centerY" secondItem="3C0-PC-TCm" secondAttribute="centerY" id="7xc-PW-jDW"/>
+                            <constraint firstItem="3C0-PC-TCm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="8ca-v7-3Af"/>
+                            <constraint firstItem="3C0-PC-TCm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="96S-kK-h70"/>
+                            <constraint firstItem="aaA-bt-xIa" firstAttribute="centerX" secondItem="P1l-ni-d0S" secondAttribute="centerX" id="Eul-2h-9gc"/>
+                            <constraint firstItem="aaA-bt-xIa" firstAttribute="top" secondItem="P1l-ni-d0S" secondAttribute="bottom" constant="8" id="P2s-Ip-dxQ"/>
+                            <constraint firstItem="UxU-6C-LEo" firstAttribute="centerX" secondItem="HhN-dg-sTk" secondAttribute="centerX" id="Xh3-q6-SuV"/>
+                            <constraint firstItem="hm3-4C-tLK" firstAttribute="top" secondItem="UxU-6C-LEo" secondAttribute="bottom" constant="8" id="f23-az-cjK"/>
+                            <constraint firstItem="hm3-4C-tLK" firstAttribute="centerX" secondItem="UxU-6C-LEo" secondAttribute="centerX" id="f3M-Re-QbG"/>
+                            <constraint firstItem="P1l-ni-d0S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="11" id="hKm-to-k8p"/>
+                            <constraint firstItem="UxU-6C-LEo" firstAttribute="top" secondItem="HhN-dg-sTk" secondAttribute="bottom" constant="70" id="lPy-pu-ob0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectionSwitch" destination="aaA-bt-xIa" id="hcC-Ai-tmp"/>
+                        <outlet property="mySwitch" destination="3C0-PC-TCm" id="Wpl-F1-ihG"/>
+                        <outlet property="stepper" destination="UxU-6C-LEo" id="5iT-8B-fXt"/>
+                        <outlet property="stepperLabel" destination="hm3-4C-tLK" id="c5T-gw-ZxB"/>
+                        <outlet property="switchStatusLabel" destination="HhN-dg-sTk" id="DS7-Js-jOd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
