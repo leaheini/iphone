@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AlertControllerProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="mQ5-5O-l1A">
+                                <rect key="frame" x="16" y="36" width="343" height="192"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJe-dC-8rX">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="simple alert"/>
+                                        <connections>
+                                            <action selector="simpleAlertAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5nj-Lb-UcC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ld-eD-Inx">
+                                        <rect key="frame" x="0.0" y="54" width="343" height="30"/>
+                                        <state key="normal" title="alert with text"/>
+                                        <connections>
+                                            <action selector="alertWithTextFieldAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cA4-8g-BdZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9E4-tM-zHk">
+                                        <rect key="frame" x="0.0" y="108" width="343" height="30"/>
+                                        <state key="normal" title="password alert"/>
+                                        <connections>
+                                            <action selector="alertUserPasswordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yOW-Fd-mSI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwR-Oj-Prl">
+                                        <rect key="frame" x="0.0" y="162" width="343" height="30"/>
+                                        <state key="normal" title="action sheet (photo selection)"/>
+                                        <connections>
+                                            <action selector="selectImagesheetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgT-zz-YGQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q5G-GJ-SPh">
+                                <rect key="frame" x="16" y="248" width="343" height="403"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q5G-GJ-SPh" firstAttribute="top" secondItem="mQ5-5O-l1A" secondAttribute="bottom" constant="20" id="Axq-Ed-Hrk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Q5G-GJ-SPh" secondAttribute="bottom" constant="16" id="E1w-iE-vlo"/>
+                            <constraint firstItem="mQ5-5O-l1A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="X3K-Xh-WuN"/>
+                            <constraint firstAttribute="trailing" secondItem="mQ5-5O-l1A" secondAttribute="trailing" constant="16" id="bfd-To-fYY"/>
+                            <constraint firstItem="Q5G-GJ-SPh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="h7z-yE-5DC"/>
+                            <constraint firstAttribute="trailing" secondItem="Q5G-GJ-SPh" secondAttribute="trailing" constant="16" id="hCu-5b-WJ2"/>
+                            <constraint firstItem="mQ5-5O-l1A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="hq4-Jz-bzC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Q5G-GJ-SPh" id="JYO-1E-m1s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

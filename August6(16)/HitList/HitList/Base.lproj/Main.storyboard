@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="isf-fw-iPk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--People Table View Controller-->
+        <scene sceneID="Qof-qt-GRe">
+            <objects>
+                <tableViewController id="UMf-Hr-AzB" customClass="PeopleTableViewController" customModule="HitList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="cM5-R0-bSe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="gxJ-j8-g8z" customClass="PersonCell" customModule="HitList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gxJ-j8-g8z" id="eK1-Zj-bLx">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joffery Baratheon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfe-xI-9DZ">
+                                            <rect key="frame" x="16" y="8" width="152.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16/12/2017 16:32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7G-EM-Ykr">
+                                            <rect key="frame" x="16" y="36" width="131" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Cfe-xI-9DZ" firstAttribute="top" secondItem="eK1-Zj-bLx" secondAttribute="top" constant="8" id="eeq-2L-GpU"/>
+                                        <constraint firstItem="Y7G-EM-Ykr" firstAttribute="leading" secondItem="eK1-Zj-bLx" secondAttribute="leading" constant="16" id="jd6-dk-iRB"/>
+                                        <constraint firstItem="Cfe-xI-9DZ" firstAttribute="leading" secondItem="eK1-Zj-bLx" secondAttribute="leading" constant="16" id="vJw-wv-Hty"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y7G-EM-Ykr" secondAttribute="bottom" constant="8" id="zfG-gd-aqG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Y7G-EM-Ykr" id="gYP-HZ-CxE"/>
+                                    <outlet property="namelabel" destination="Cfe-xI-9DZ" id="iG0-vK-OdX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UMf-Hr-AzB" id="IkF-If-7Ve"/>
+                            <outlet property="delegate" destination="UMf-Hr-AzB" id="JhP-UZ-SXf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="oo8-0v-WVp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="F6B-rU-ds3">
+                            <connections>
+                                <action selector="addPersonNameAction:" destination="UMf-Hr-AzB" id="MHX-Ub-ceS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPN-5U-J0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="-120.08995502248877"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qhk-60-dS8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="isf-fw-iPk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="knS-XA-bjb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UMf-Hr-AzB" kind="relationship" relationship="rootViewController" id="ZKG-cT-6DU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOZ-Mp-1pS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808.79999999999995" y="-120.08995502248877"/>
+        </scene>
+    </scenes>
+</document>
