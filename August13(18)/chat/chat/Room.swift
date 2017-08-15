@@ -25,7 +25,7 @@ extension Date{
 //present room from the firebase
 class Room{
     let id : String
-    let name : String?
+    var name : String?
     let owner : String?
     let date : Date?
     

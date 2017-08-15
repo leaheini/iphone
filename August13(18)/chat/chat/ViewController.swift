@@ -6,6 +6,7 @@
 //  Copyright © 2017 com.hackeru. All rights reserved.
 //
 
+// depricated
 import UIKit
 import FirebaseAuth
 

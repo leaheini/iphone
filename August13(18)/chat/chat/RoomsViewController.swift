@@ -17,25 +17,40 @@ class RoomsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // the observes are listeners to the create or change of room on the DB
         DBManager.manager.observeRoomAdded {
-            self.tableArray.insert($0, at: 0)
+            self.tableArray.insert($0, at: 0)    // $0 = the first argument is the only one - room
             let indexPath = IndexPath(row: 0, section: 0)
             self.tableView.insertRows(at: [indexPath], with: .automatic)
         }
         
         DBManager.manager.observeRoomRemoved { id in
+            /*
+            let index = self.tableArray.index(where: { (room) -> Bool in
+                return room.id == id
+            }) */
             let index = self.tableArray.index(where: { room in    // do for loop
                 return room.id == id
             })
             
             if let index = index{
-                let row : Int = Int(index)
-                
-                self.tableArray.remove(at: row)
-                let indexPath = IndexPath(row: row, section: 0)
+                //let row : Int = Int(index)
+                self.tableArray.remove(at: index)
+                let indexPath = IndexPath(row: index, section: 0)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             }
+        }
+        
+        DBManager.manager.observeRoomUpdated { (id, name) in
+            let index = self.tableArray.index(where: { room in    // do for loop
+                return room.id == id
+            })
             
+            if let index = index{
+                self.tableArray[index].name = name
+                let indexPath = IndexPath(row: index, section: 0)
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
     }
 
@@ -59,19 +74,25 @@ class RoomsViewController: UIViewController, UITableViewDataSource {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func signOutAction(_ sender: Any) {
+        try? Auth.auth().signOut()
+        FlowController.shared.determineRoot()
+    }
+    
     // MARK: - UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RoomCell
         
         let r : Room = tableArray[indexPath.row]
         
-        cell.textLabel?.text = r.name
-        cell.detailTextLabel?.text = r.date?.toString
+        //cell.textLabel?.text = r.name
+        //cell.detailTextLabel?.text = r.date?.toString
         
+        cell.configure(with: r)
         return cell
     }
     

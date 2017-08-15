@@ -30,16 +30,21 @@ class DBManager{
         let dict : [String:Any] = [
             "name":name,
             "owner":uid,
-            "date":Date().timeIntervalSince1970
+            "date":Date().timeIntervalSince1970   // date of now as double cause DB cant save Date
         ]
         
         roomsRef.childByAutoId().setValue(dict)
+    }
+    
+    func updateRoom(_ room : Room, name : String){
+        roomsRef.child(room.id).updateChildValues(["name" : name])
     }
     
     func deleteRoom(_ room : Room){
         roomsRef.child(room.id).removeValue()   // or roomsRef.child(room.id).setValue(nil)
     }
     
+    // 2 methods which tell a story about room changes - someone listener to them inorder to delete at the array and table
     func observeRoomAdded(_ completion : @escaping (Room) -> Void){
         roomsRef.observe(.childAdded) { (snapshot : DataSnapshot) in
             guard let value = snapshot.value as? [String:Any] else{
@@ -54,6 +59,15 @@ class DBManager{
     func observeRoomRemoved(_ completion : @escaping (String)->Void){
         roomsRef.observe(.childRemoved) { (snapshot : DataSnapshot) in
             completion(snapshot.key)
+        }
+    }
+    
+    func observeRoomUpdated(_ completion : @escaping (String, String) -> Void){
+        roomsRef.observe(.childChanged) { (snapshot : DataSnapshot) in
+            guard let value = snapshot.value as? [String:Any] else{
+                return
+            }
+            completion(snapshot.key, value["name"] as! String)
         }
     }
     

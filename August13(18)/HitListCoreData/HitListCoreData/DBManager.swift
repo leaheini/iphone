@@ -29,11 +29,12 @@ class DBManager: NSObject {
         
         request.sortDescriptors = [sortLastName, sortFirstName]
         
+        // adding filter
         if var filter = filter, !filter.isEmpty{
             filter = filter.trimmingCharacters(in:
                 CharacterSet.whitespacesAndNewlines)    // remove spaces
             
-            let predicate = NSPredicate(format: "firstName CONTAINS[cd] %@ OR lastName CONTAINS[cd] %@", filter, filter)
+            let predicate = NSPredicate(format: "firstName CONTAINS[cd] %@ OR lastName CONTAINS[cd] %@", filter, filter)   // filter to firstName and filter to lastName
             request.predicate = predicate
         }
         

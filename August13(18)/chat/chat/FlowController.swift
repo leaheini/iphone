@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+// to know which storybaoad to open
 class FlowController{
 
     static let shared = FlowController()

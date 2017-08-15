@@ -34,7 +34,7 @@ class SignInViewController: UIViewController {
                 return
             }
             
-            FlowController.shared.determineRoot()
+            FlowController.shared.determineRoot()    // to show the correct storyboard
         }
     }
 
