@@ -33,7 +33,7 @@ class PeopleTableViewController: UITableViewController {
         return controller.sections?.count ?? 0
     }
     
-    // suuport of index titles - addind sargel A-Z on side
+    // support of index titles - addind A-Z on side
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return controller.sectionIndexTitles
     }
@@ -47,8 +47,8 @@ class PeopleTableViewController: UITableViewController {
         return controller.sections![section].numberOfObjects
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PersonCell
 
         // Configure the cell...
@@ -58,25 +58,21 @@ class PeopleTableViewController: UITableViewController {
         return cell
     }
  
-
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
-
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-        
             let p : Person = controller.object(at: indexPath)
             DBManager.manager.context.delete(p)
             DBManager.manager.saveContext()
         }
     }
- 
 
     /*
     // MARK: - Navigation
@@ -142,7 +138,7 @@ extension PeopleTableViewController : UISearchBarDelegate{
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()  // close keybaurd
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

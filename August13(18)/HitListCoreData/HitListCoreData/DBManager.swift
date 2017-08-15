@@ -13,7 +13,7 @@ class DBManager: NSObject {
     
     static let manager = DBManager()
     
-    var context : NSManagedObjectContext{   // throw him make changes
+    var context : NSManagedObjectContext{   // by this we make changes
         get{
             return persistentContainer.viewContext
         }
