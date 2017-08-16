@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Nr-it-tUr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="KCM-Od-VJy">
+            <objects>
+                <viewController id="zly-mN-p3y" customClass="SearchViewController" customModule="MarvelProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3QI-1C-BVD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dyc-QC-G6q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SNC-RZ-TwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aUE-Bt-9kz">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cRU-hT-yeB">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Wk3-K6-eqi" customClass="CharacterCell" customModule="MarvelProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pfn-DB-GVm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Captain America the Great (1997)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrJ-6g-s5T">
+                                                    <rect key="frame" x="0.0" y="68" width="100" height="32"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="mNy-QH-nYG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="pfn-DB-GVm" firstAttribute="top" secondItem="Wk3-K6-eqi" secondAttribute="top" id="5ZB-9G-Xck"/>
+                                            <constraint firstItem="xrJ-6g-s5T" firstAttribute="leading" secondItem="Wk3-K6-eqi" secondAttribute="leading" id="72M-00-XzX"/>
+                                            <constraint firstAttribute="trailing" secondItem="xrJ-6g-s5T" secondAttribute="trailing" id="8ko-ma-XVh"/>
+                                            <constraint firstAttribute="bottom" secondItem="xrJ-6g-s5T" secondAttribute="bottom" id="Bqo-GA-ifb"/>
+                                            <constraint firstAttribute="bottom" secondItem="pfn-DB-GVm" secondAttribute="bottom" id="F5e-WJ-Lxs"/>
+                                            <constraint firstItem="pfn-DB-GVm" firstAttribute="leading" secondItem="Wk3-K6-eqi" secondAttribute="leading" id="ia2-yQ-s1f"/>
+                                            <constraint firstAttribute="trailing" secondItem="pfn-DB-GVm" secondAttribute="trailing" id="vP9-7a-g9u"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="pfn-DB-GVm" id="x1c-ib-0og"/>
+                                            <outlet property="label" destination="xrJ-6g-s5T" id="SL9-Ni-jYs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="zly-mN-p3y" id="S3X-ae-IIF"/>
+                                    <outlet property="delegate" destination="zly-mN-p3y" id="JnZ-TG-71Z"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" placeholder="marvel's character name" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D9b-o8-JXx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Zmv-MO-lna"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zly-mN-p3y" id="hlq-Sw-ZV8"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aUE-Bt-9kz" firstAttribute="leading" secondItem="SNC-RZ-TwJ" secondAttribute="leading" id="7qv-7o-NMh"/>
+                            <constraint firstItem="aUE-Bt-9kz" firstAttribute="top" secondItem="D9b-o8-JXx" secondAttribute="bottom" id="DQs-a9-KjO"/>
+                            <constraint firstAttribute="trailing" secondItem="D9b-o8-JXx" secondAttribute="trailing" id="QLC-xg-7Zw"/>
+                            <constraint firstAttribute="trailing" secondItem="aUE-Bt-9kz" secondAttribute="trailing" id="kvg-RE-q9h"/>
+                            <constraint firstItem="D9b-o8-JXx" firstAttribute="top" secondItem="3QI-1C-BVD" secondAttribute="bottom" id="lT4-Py-pYv"/>
+                            <constraint firstItem="Dyc-QC-G6q" firstAttribute="top" secondItem="aUE-Bt-9kz" secondAttribute="bottom" id="oY4-rq-7Fd"/>
+                            <constraint firstItem="D9b-o8-JXx" firstAttribute="leading" secondItem="SNC-RZ-TwJ" secondAttribute="leading" id="pMc-Tb-eSA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dEX-zq-dfh"/>
+                    <connections>
+                        <outlet property="collectionView" destination="aUE-Bt-9kz" id="4gj-fv-edg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEe-xg-CKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1280.8" y="-467.3163418290855"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Azg-j4-gNd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Nr-it-tUr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f9f-gI-3dE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zly-mN-p3y" kind="relationship" relationship="rootViewController" id="e8Q-S6-Ryh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M0n-zN-r5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341.60000000000002" y="-467.3163418290855"/>
+        </scene>
+    </scenes>
+</document>
