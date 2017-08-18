@@ -17,7 +17,7 @@ class ChatViewController: JSQMessagesViewController {
     var messages : [JSQMessage] = []
     let outgoingBubble : JSQMessagesBubbleImage    // we need init
     //let incomingBubble : JSQMessagesBubbleImage // we need init
-    var incomingBubbles : [String:JSQMessagesBubbleImage] = [:]
+    var incomingBubbles : [String:JSQMessagesBubbleImage] = [:]   //inorder to make specific color to each user
     
     required init?(coder aDecoder: NSCoder) {    // init of storyboard it coder
         
@@ -40,7 +40,7 @@ class ChatViewController: JSQMessagesViewController {
         self.senderId = Auth.auth().currentUser?.uid
         self.senderDisplayName = Auth.auth().currentUser?.displayName ?? "defaultName"
         
-        self.title = room.name       // name to the controller
+        self.title = room.name       // name to the chat controller screen is the room name
         
         // to delete the place of the avatar at each msg
         self.collectionView.collectionViewLayout.incomingAvatarViewSize = .zero
@@ -50,11 +50,12 @@ class ChatViewController: JSQMessagesViewController {
         
         DBManager.manager.observeNewMessage(by: room) { (msg) in
             
-            //make sound only if new msg - if msg date is bigger than date
+            //make sound only if new msg - if msg date is bigger than now date
+            // like this wont play sounds for all oldest messages
             let shouldPlaySound = msg.date.timeIntervalSince(date) > 0
 
             //add new message to array
-            self.messages.append(msg)
+            self.messages.append(msg)   // append - to the end of the array
             
             let isOutgoing = msg.senderId == self.senderId
             if isOutgoing{
@@ -99,7 +100,7 @@ class ChatViewController: JSQMessagesViewController {
         if userId == self.senderId{
             return outgoingBubble
         } else {
-            return bubbleImageFor(uid: userId)
+            return bubbleImageFor(uid: userId)  // unique color to each user
         }
     }
     
@@ -107,7 +108,7 @@ class ChatViewController: JSQMessagesViewController {
         return nil
     }
     
-    // lets add user name in each msg - name text
+    // lets add user name in each msg - name text (as top label)
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString! {
         
         guard let name = messages[indexPath.item].senderDisplayName, !name.isEmpty else {
@@ -127,7 +128,7 @@ class ChatViewController: JSQMessagesViewController {
         return 17
     }
     
-    // time text
+    // time text (on bottom)
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForCellBottomLabelAt indexPath: IndexPath!) -> NSAttributedString! {
         
         let msg = messages[indexPath.item]
@@ -138,12 +139,13 @@ class ChatViewController: JSQMessagesViewController {
     
     //time height
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellBottomLabelAt indexPath: IndexPath!) -> CGFloat {
-        
+        // for sure there is time so
         return 17
     }
     
     //Mark: - Messages Maintenance
     
+    // when click SEND new message on chat
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         
         guard let text = text, !text.isEmpty else {
@@ -157,9 +159,10 @@ class ChatViewController: JSQMessagesViewController {
         //TODO: - implement to send image
     }
     
+    // uniqe bubble color reach user
     func bubbleImageFor(uid : String) -> JSQMessagesBubbleImage?{
         guard incomingBubbles[uid] == nil else{
-            //already exit bubble for this uid
+            //already exit color bubble for this uid
             return incomingBubbles[uid]
         }
         

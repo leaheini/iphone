@@ -23,7 +23,7 @@ class DBManager{
     }
     
     func createRoom(with name : String){
-        guard let uid = Auth.auth().currentUser?.uid else {   // only user could create room
+        guard let uid = Auth.auth().currentUser?.uid else {   // only register user can create room
             return
         }
         
@@ -31,7 +31,7 @@ class DBManager{
         let dict : [String:Any] = [
             "name":name,
             "owner":uid,
-            "date":Date().timeIntervalSince1970   // date of now as double cause DB cant save Date
+            "date":Date().timeIntervalSince1970   // date of now as double cause DB cant save Date type
         ]
         
         roomsRef.childByAutoId().setValue(dict)
@@ -72,10 +72,10 @@ class DBManager{
         }
     }
     
-    // 16.8.17 creating messages
+    // second Lesson: 16.8.17 creating messages
     // MARK: - Messages
     func createMessage(with text : String, room : Room){
-        guard let uid = Auth.auth().currentUser?.uid else {   // only user could create message
+        guard let uid = Auth.auth().currentUser?.uid else {   // only register user can create message
             return
         }
         
@@ -89,7 +89,7 @@ class DBManager{
         messagesRef.child(room.id).childByAutoId().setValue(dict)
     }
     
-    // will work in incoming or outcoming message
+    // will work when incoming or outcoming message
     func observeNewMessage(by room : Room, completion : @escaping (JSQMessage)->Void){
         
         messagesRef.child(room.id).observe(.childAdded, with: { (snapshot) in
@@ -102,7 +102,7 @@ class DBManager{
             let timestamp = dict["date"] as? TimeInterval ?? 0
             let date = Date(timeIntervalSince1970: timestamp)
             let text = dict["text"] as? String ?? ""
-            
+
             guard let msg = JSQMessage(senderId: senderId, senderDisplayName: name, date: date, text: text) else{
                 return
             }

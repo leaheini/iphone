@@ -116,7 +116,7 @@ class RoomsViewController: UIViewController, UITableViewDataSource {
         if let chatVC = segue.destination as? ChatViewController,
             let cell = sender as? UITableViewCell,
             let indexPath = tableView.indexPath(for: cell){
-            
+
             chatVC.room = tableArray[indexPath.row]
         }
        
