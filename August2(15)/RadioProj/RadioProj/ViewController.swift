@@ -20,8 +20,12 @@ class ViewController: UIViewController {
         didSet{
             if let url = currentStation?.url{
                 player = AVPlayer(url: url)
-                playButton.isEnabled = true
-                pauseButton.isEnabled = false
+                playButton.isEnabled = false
+                pauseButton.isEnabled = true
+                
+                statusLabel.text = "playing 🎶"
+                
+                player?.play()
             }
         }
     }
@@ -29,7 +33,7 @@ class ViewController: UIViewController {
     var player : AVPlayer?
     
     required init?(coder aDecoder: NSCoder) {
-        pickerArray = RadioStation.readFile()
+        pickerArray = RadioStation.readFile()  // cause its method of class RadioStation
         super.init(coder: aDecoder)
     }
     
@@ -38,15 +42,16 @@ class ViewController: UIViewController {
 
         pauseButton.isEnabled = false
         
-        /*
+        /*  // if only one station
         let urlString = "http://glzwizzlv.bynetcdn.com/glz_mp3"
         if let url = URL(string: urlString){
             player = AVPlayer(url: url)
         }
- */
+         */
         
         self.currentStation = pickerArray.first
         
+        // to let volume work from the iphone
         try? AVAudioSession.sharedInstance().setActive(true)
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
     }

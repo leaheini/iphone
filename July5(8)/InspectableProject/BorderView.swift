@@ -19,7 +19,6 @@ extension UIView{      //influence all view
             }else{
                 return nil
             }
-            
         }
     }
     

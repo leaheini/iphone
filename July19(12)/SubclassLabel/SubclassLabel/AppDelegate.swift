@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let families = UIFont.familyNames
         print(families)
         
-        let names = UIFont.fontNames(forFamilyName: "Oswals")
+        let names = UIFont.fontNames(forFamilyName: "Oswald")
         print("\n\n")
         print(names)
         print("\n\n")

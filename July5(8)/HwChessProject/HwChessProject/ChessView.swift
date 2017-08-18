@@ -3,6 +3,7 @@
 
 import UIKit
 
+//@IBDesignable
 @IBDesignable class ChessView: UIView {
     
     //from stroryboard
@@ -24,7 +25,7 @@ import UIKit
     
     
     private func setup(){
-        //clean up
+        //clean up chess
         for item in self.subviews{
             if item is BlackView || item is WhiteView{
                 item.removeFromSuperview()
@@ -51,7 +52,6 @@ import UIKit
                 
                 //increament x
                 rect.origin.x += tileSize
-                
             }
             
             //zero x

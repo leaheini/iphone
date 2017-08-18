@@ -10,20 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //////////// building button progromatically with "win gold" text  ///////////////////////
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        //custom - need to do everything alone
+        //custom - developer need to design everything alone
         //let button = UIButton(frame: CGRect(x: 20, y: 100, width: 150, height: 70))
         
-        //system - properties of IOS
+        //system - properties buildIn of XCode
         let button = UIButton(type: .system)
         button.frame = CGRect(x: 20, y: 100, width: 150, height: 70)
         
-        // Win - black and Gold - yellow with attributed string
+        //we want to make: Win - black and Gold - yellow with attributed string
         let text = "Win Gold"
-        let atts : [String:Any] = [   // dictionary - key: string, value: any
+        let atts : [String:Any] = [   // dictionary - [key: string, value: any]
+            // lets make 3 keys
             NSFontAttributeName:UIFont.boldSystemFont(ofSize: 24),   // make the text bold
             NSUnderlineStyleAttributeName:NSUnderlineStyle.styleThick.rawValue,   // make text with underline
             NSUnderlineColorAttributeName:UIColor.purple    // colored the underline to purple
@@ -48,7 +50,6 @@ class ViewController: UIViewController {
     func buttonPressed(){
         print(#function)
     }
-
 
 }
 

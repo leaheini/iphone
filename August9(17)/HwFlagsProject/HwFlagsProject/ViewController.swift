@@ -17,9 +17,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        ServerLogic.shared.getCurrencies(with: "USD") {
+        ServerLogic.shared.getCurrencies(with: "USD") {  // can switch to other currency state
             self.navigationItem.title = $1   // the date
             self.tableArray = $0    // the Currency array we load at class ServerLogic
             self.tableView.reloadData()
@@ -39,11 +38,11 @@ class ViewController: UIViewController {
                 return
             }
             
-            // let print the date on top
+            // lets print the date on top
             let dateString = result["date"] as? String
             self.navigationItem.title = dateString
             
-            //print(result)  // now we get the json
+            //print(result)  // now we get the json data
             
             guard let ratesDict = result["rates"] as? [String:Double] else{
                 return
@@ -64,12 +63,6 @@ class ViewController: UIViewController {
         }
          */
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

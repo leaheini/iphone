@@ -28,7 +28,7 @@ class PeopleTableViewController: UITableViewController {
             
             //add row to UI
             let indexPath = IndexPath(row: 0, section: 0)
-            self.tableView.insertRows(at: [indexPath], with: .right)
+            self.tableView.insertRows(at: [indexPath], with: .right)  // insert from right side
         }))
         
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
@@ -38,7 +38,6 @@ class PeopleTableViewController: UITableViewController {
         }
         
         self.present(alert, animated: true, completion: nil)
-        
     }
 
     override func viewDidLoad() {
@@ -46,7 +45,7 @@ class PeopleTableViewController: UITableViewController {
         
         tableArray.append(Person(name: "test"))
         
-        // to make delete option (-)
+        // to make edit btn from left to delete option (-)
         navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
@@ -67,6 +66,7 @@ class PeopleTableViewController: UITableViewController {
     }
    
     
+    // we want edit row in order to delete row
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.

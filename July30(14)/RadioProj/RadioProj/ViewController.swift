@@ -27,6 +27,7 @@ class ViewController: UIViewController {
             player = AVPlayer(url: url)
         }
         
+        // to listen music even if out of the application
         try? AVAudioSession.sharedInstance().setActive(true)
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
     }

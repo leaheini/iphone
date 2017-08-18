@@ -16,7 +16,7 @@ class ViewController: UIViewController, ColorPickerViewControllerDelegate {
     @IBOutlet weak var frameColorButton: UIButton!
     @IBOutlet weak var fillColorButton: UIButton!
     
-    var colorChangeSegueIdentifier : String?  // to know if its fill or frame segue button id
+    var colorChangeSegueIdentifier : String?  // to know if its fill or frame segue id
     weak var colorChangeSegueButton : UIButton?
     
     override func viewDidLoad() {
@@ -31,15 +31,14 @@ class ViewController: UIViewController, ColorPickerViewControllerDelegate {
 
     
     @IBAction func lineWidthAction(_ sender: UISlider) {
-        
         triangleView.lineWidth = CGFloat(sender.value)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC = segue.destination as? ColorPickerViewController{
-            nextVC.delegate = self
-            self.colorChangeSegueIdentifier = segue.identifier  // cause we done id at story to recognize them
-            self.colorChangeSegueButton = sender as? UIButton   // cause sender is any
+            nextVC.delegate = self      // the var delegate of ColorPickerViewController
+            self.colorChangeSegueIdentifier = segue.identifier  // cause we done id at story to recognize between 2 segue buttons
+            self.colorChangeSegueButton = sender as? UIButton   // cause sender is any -> of the 2 buttons
             nextVC.startColor = (sender as? UIButton)?.titleColor(for: .normal)
         }
         
@@ -52,7 +51,7 @@ class ViewController: UIViewController, ColorPickerViewControllerDelegate {
             return
         }
         
-        //set title color to relevant button
+        // set title color to relevant button
         colorChangeSegueButton?.setTitleColor(color, for: .normal)
         colorChangeSegueButton = nil
         

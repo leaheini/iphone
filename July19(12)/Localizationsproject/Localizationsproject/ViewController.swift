@@ -22,11 +22,10 @@ class ViewController: UIViewController {
         
         label.text = NSLocalizedString("mainvc_title_label_text", comment: "mainvc_title_label_text")
         
-        secondLabel.text = "mainvc_second_label_text".localizedString    // now done otomatically by the extension
+        secondLabel.text = "mainvc_second_label_text".localizedString    // now done automatically by the extension
     }
 
     @IBAction func playAction(_ sender: Any) {
-        
         if let player = player, player.isPlaying{     // to stop sound
             player.stop()
             self.player = nil

@@ -13,7 +13,7 @@ class GradientView: UIView {
     var colors : [UIColor] = [.white]{
         didSet{
             //refresh colors (gradient layer)
-            guard let gradient = self.layer.sublayers?.first as? CAGradientLayer else {     //casting to check it wasnt changed to layer with other type
+            guard let gradient = self.layer.sublayers?.first as? CAGradientLayer else {     //casting to check it wasnt changed to layer with other type, first cause we put only one layer
                 return
             }
             
@@ -23,11 +23,11 @@ class GradientView: UIView {
     
     private var cgColors : [CGColor] {
         get{
-            return colors.map { $0.cgColor }
-            
-            //or the same as
+            return colors.map { $0.cgColor }  // take the array colors from type UIColor and make it type CGColor
             
             /*
+            //or the same as
+            
             let b : [CGColor] = colors.map { (c : UIColor) -> CGColor in
                 return c.cgColor
             }
@@ -63,6 +63,7 @@ class GradientView: UIView {
         self.layer.insertSublayer(gradient, at: 0)
     }
     
+    //refresh constrains
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -73,3 +74,4 @@ class GradientView: UIView {
     }
 
 }
+

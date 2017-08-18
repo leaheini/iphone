@@ -11,11 +11,11 @@ import SDWebImage
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!  // the sand clock sun till download
     @IBOutlet weak var imageView: UIImageView!
 
-    @IBAction func loadInageAction(_ sender: UIButton) {
-        
+    @IBAction func loadImageAction(_ sender: UIButton) {
+        // option 3 - the better one
         imageView.image = nil
         activityIndicatorView.startAnimating()
         sender.isEnabled = false
@@ -26,15 +26,13 @@ class ViewController: UIViewController {
             return
         }
         
-        //clear cach for specific url
+        //clear cach for specific url.      cach its space at memory
         //SDImageCache.shared().removeImage(forKey: urlString, fromDisk: true, withCompletion: nil)
         
         // clear all caches
         //SDImageCache.shared().clearMemory()
         
-        
-        //imageView.sd_setImage(with: url)
-        imageView.sd_setImage(with: url) { (_, _, _, _) in
+        imageView.sd_setImage(with: url) { (_, _, _, _) in    // sd - function from import SDWebImage
             self.activityIndicatorView.stopAnimating()
             sender.isEnabled = true
         }
@@ -79,12 +77,12 @@ class ViewController: UIViewController {
         
         // go to background thread
         DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url) else{     // try? because it has throws    // guard to make sure no nil
+            guard let data = try? Data(contentsOf: url) else{     // try? because it has throws  // guard to make sure no nil
                 return
             }
             let image = UIImage(data: data)
             
-            // go back to main thread
+            // go back to main thread - cause changing visibilty always on main thread
             DispatchQueue.main.async {
                 self.imageView.image = image
             }

@@ -15,19 +15,22 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
+        }
+    
+    
     
     @IBAction func segmentAction(_ sender:UISegmentedControl) {
         let index = sender.selectedSegmentIndex
-        guard let nextVC = self.viewController(by: index) else{
+        guard let nextVC = self.viewController(by: index) else{    //func viewController
             return
         }
         
         self.display(vc: nextVC)
     }
     
+    
+    
+    // swipe to next controller with swipe gesture
     @IBAction func swipeNext(){
         var currentIndex = segmentedControl.selectedSegmentIndex
         currentIndex += 1

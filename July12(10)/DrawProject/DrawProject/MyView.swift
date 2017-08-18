@@ -45,6 +45,7 @@ class MyView: UIView {
         let w = bounds.width
         let h = bounds.height
         
+        // lets draw meshulash
         context?.move(to: CGPoint(x: w * 0.5, y: h * 0.1))   //from
         context?.addLine(to: CGPoint(x: w * 0.1, y: h * 0.8))  //to
         context?.addLine(to: CGPoint(x: w * 0.9, y: h * 0.8))
@@ -58,8 +59,8 @@ class MyView: UIView {
         UIColor.purple.setFill()      //fill
         
         //----- draw the misgeret ------
-        //context?.strokePath()
-        //context?.fillPath()
+        // 1.     context?.strokePath()
+        // 2.     context?.fillPath()
         context?.drawPath(using: .fillStroke)  //instead of two above
         
     }

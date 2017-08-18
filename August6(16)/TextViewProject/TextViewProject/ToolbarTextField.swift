@@ -8,6 +8,8 @@
 
 import UIKit
 
+// toolBar to written next and done above the keybaurd
+
 class ToolbarTextField: UITextField {
 
     //from stroryboard
@@ -25,22 +27,24 @@ class ToolbarTextField: UITextField {
     func setup(){
         // create toolbar
         let width = UIScreen.main.bounds.width
-        let rect = CGRect(x: 0, y: 0, width: width, height: 44)
+        let rect = CGRect(x: 0, y: 0, width: width, height: 44)   // height 44 recommended
         let toolbar = UIToolbar(frame: rect)
         
         // create button
         let buttonText = self.returnKeyType == .next ? "Next" : "Done"
         let button = UIBarButtonItem(title: buttonText, style: .done, target: self, action: #selector(buttonAction))
         
+        // to make the button on the right side of the toolBar we add spacing
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         toolbar.items = [spaceButton, button]
         
+        // to add this toolBar to the view
         self.inputAccessoryView = toolbar
     }
     
     func buttonAction(){
-        // text fiels listen to did on exit
+        // text field listen to .editingDidEndOnExit
         self.sendActions(for: .editingDidEndOnExit)
     }
 

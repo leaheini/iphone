@@ -23,7 +23,7 @@ class AppControl: UIControl {
     }
     
     private func setup(){
-        layer.borderColor = UIColor(red: 8/255.0, green: 64/255.0, blue: 128/255.0, alpha: 1).cgColor
+        layer.borderColor = UIColor(red: 64/255.0, green: 90/255.0, blue: 147/255.0, alpha: 1).cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 5
     }
@@ -34,7 +34,7 @@ class AppControl: UIControl {
         }
         
         // switching also the border color
-        let color = UIColor(red: 8/255.0, green: 64/255.0, blue: 128/255.0, alpha: 1)
+        let color = UIColor(red: 64/255.0, green: 90/255.0, blue: 147/255.0, alpha: 1)
         layer.borderColor = color.withAlphaComponent(h ? 0.6 : 1).cgColor
 
     }

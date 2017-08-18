@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         alert.addAction(cancelAction)
         
         alert.addAction(UIAlertAction(title: "yes", style: .destructive, handler: { (_) in
-            // handler something that done when yes
+            // handler - something that done when yes
             print("yes")
         }))
         
@@ -51,10 +51,10 @@ class ViewController: UIViewController {
     @IBAction func alertUserPasswordAction(_ sender: Any) {
         let alert = UIAlertController(title: "Register", message: nil, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Log in", style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Log in", style: .default, handler: { _ in
             guard let email = alert.textFields?.first?.text,
-            let password = alert.textFields?.last?.text else{
-                return
+                    let password = alert.textFields?.last?.text else{
+                        return
             }
             
             if email == "leah@gmail.com" && password == "123456"{
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
         
         alert.addTextField{
             $0.placeholder = "type password"
-            $0.isSecureTextEntry = true   // shown docs instead the password which clicked
+            $0.isSecureTextEntry = true   // shown docs... instead the password which clicked
         }
         
         self.present(alert, animated: true, completion: nil)
@@ -81,9 +81,10 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var imageView: UIImageView!
+    
     // 4rd btn action
     @IBAction func selectImagesheetAction(_ sender: Any) {
-        let sheet = UIAlertController(title: "Select Source", message: nil, preferredStyle: .actionSheet)
+        let sheet = UIAlertController(title: "Select Source", message: nil, preferredStyle: .actionSheet)  //.actionSheet - came from down and .alert - middle
         
         // one func to all 3 first buttons action on the alert
         func handler(_ action : UIAlertAction){
@@ -92,6 +93,7 @@ class ViewController: UIViewController {
             }
             
             let picker = UIImagePickerController()
+            
             switch title{
             case "Photo Album":
                 picker.sourceType = .photoLibrary
@@ -107,7 +109,7 @@ class ViewController: UIViewController {
             
             picker.delegate = self
             
-            self.present(picker, animated: true, completion: nil)
+            self.present(picker, animated: true, completion: nil)   // present the picker
         }
         
         sheet.addAction(UIAlertAction(title: "Photo Album", style: .destructive, handler: handler))
@@ -116,13 +118,13 @@ class ViewController: UIViewController {
 
         sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        self.present(sheet, animated: true, completion: nil)
+        self.present(sheet, animated: true, completion: nil)   // present the sheet alert
     }
 
 }
 
 extension ViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-    // close the page
+    // close the Image picker page
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }

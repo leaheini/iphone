@@ -37,8 +37,6 @@ class ColorPickerViewController: UIViewController {
             redSlider.value = Float(red)
             greenSlider.value = Float(green)
             blueSlider.value = Float(blue)
-
-            
         }
         
         //init the color like the slider

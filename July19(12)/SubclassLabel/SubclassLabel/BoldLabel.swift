@@ -25,7 +25,6 @@ class BoldLabel: UILabel {
     }
     
     private func setup(){
-
         //self.font = UIFont.boldSystemFont(ofSize: 20)      //font
         //self.font = UIFont(name: "Arial-BoldMT", size: 20)     // to determine the font type
         self.font = UIFont(name: "Oswald-Bold", size: 24)
@@ -40,7 +39,7 @@ class BoldLabel: UILabel {
         layer.borderWidth = 1   //border
         layer.borderColor = UIColor.blue.cgColor
         layer.cornerRadius = 10
-        layer.masksToBounds = true
+        layer.masksToBounds = true  // to make backgroundColor wont out from layer
         
         textAlignment = .center     //alignment
         

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,6 +46,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838" y="-351"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="xQu-G8-3R3">
+            <objects>
+                <viewController id="703-vC-pli" customClass="ThirdViewController" customModule="DrawProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rds-bJ-yU2"/>
+                        <viewControllerLayoutGuide type="bottom" id="tka-zj-Kfy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ogK-kf-P97" customClass="HwTraingleView" customModule="DrawProject" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Omh-YY-6ZM">
+                                <rect key="frame" x="14" y="572" width="347" height="31"/>
+                                <connections>
+                                    <action selector="lineSlider:" destination="703-vC-pli" eventType="valueChanged" id="SRq-Q5-3qj"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Omh-YY-6ZM" firstAttribute="leading" secondItem="ogK-kf-P97" secondAttribute="leading" constant="16" id="87O-81-gas"/>
+                            <constraint firstAttribute="trailing" secondItem="Omh-YY-6ZM" secondAttribute="trailing" constant="16" id="F5W-GT-Zk8"/>
+                            <constraint firstItem="tka-zj-Kfy" firstAttribute="top" secondItem="Omh-YY-6ZM" secondAttribute="bottom" constant="16" id="qlg-4F-YjT"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="XBU-95-W9q" userLabel="Third"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMe-Mj-oOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="863"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -92,6 +124,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="703-vC-pli" kind="relationship" relationship="viewControllers" id="8cU-al-ENe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

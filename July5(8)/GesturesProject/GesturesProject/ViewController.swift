@@ -17,7 +17,8 @@ class ViewController: UIViewController {
             return
         }
         
-        let radians = CGFloat.pi * 0.25  //45 degrees
+        //rotation
+        let radians = CGFloat.pi * 0.25  //pai = 180. 180/4 = 45 degrees
         myView.transform = CGAffineTransform(rotationAngle: radians)
         
         //back to default
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
         
     }
 
+    // on double click change color
     @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
         sender.view?.backgroundColor = .randomColor
     }

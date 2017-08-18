@@ -9,6 +9,7 @@
 import UIKit
 
 class ColorBezierPath: UIBezierPath {
+    
     var strokeColor : UIColor?
     
     override func stroke() {
@@ -18,4 +19,5 @@ class ColorBezierPath: UIBezierPath {
         
         super.stroke()
     }
+    
 }

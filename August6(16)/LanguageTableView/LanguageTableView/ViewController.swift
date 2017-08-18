@@ -11,12 +11,13 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tableArray : [String]
-    var selectionSet : Set<String> = []
+    var selectionSet : Set<String> = []  // to the check marked
     
     required init?(coder aDecoder: NSCoder) {
         
         // to show all output in hebrew
         let hebLang = Locale(identifier: "he")
+        
         let arr = Locale.availableIdentifiers.flatMap{
             hebLang.localizedString(forLanguageCode: $0)
         }
@@ -28,13 +29,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     // no need method number of section cause default 1
     
-    //frist must method
+    //first must method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableArray.count
     }
     
     //second must table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = tableArray[indexPath.row]
         
@@ -62,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let name = tableArray[indexPath.row]
         
-        let cell = tableView.cellForRow(at: indexPath)   // refresh instead of reload line 73
+        let cell = tableView.cellForRow(at: indexPath)   // refresh instead of reload line 84
         
         if selectionSet.contains(name){
             selectionSet.remove(name)
@@ -83,7 +85,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //print(tableArray[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
     

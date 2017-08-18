@@ -40,16 +40,17 @@ class MacOSXViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     //MARK: - UIPickerView Data Source -
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 1  // cause only one column
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return macOSNamesArr.count
+        return macOSNamesArr.count   //number of rows
     }
     
+    // instead of next paragraph titleForRow
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let text = macOSNamesArr[row]
-        let color : UIColor = (row % 2 == 0) ? .red : .blue
+        let color : UIColor = (row % 2 == 0) ? .red : .blue  // double red, odd blue
         
         //return NSAttributedString(string: text, attributes: [NSFontAttributeName : color])
         
@@ -58,7 +59,6 @@ class MacOSXViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
             NSFontAttributeName:UIFont.boldSystemFont(ofSize: 18)
         ]
         return NSAttributedString(string: text, attributes: atts)
-
     }
     
     /*

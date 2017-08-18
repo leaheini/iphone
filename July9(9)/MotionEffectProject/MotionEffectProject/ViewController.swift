@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // motion of the view when motion of the iphone
         let xEffect = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
         xEffect.minimumRelativeValue = -100
         xEffect.maximumRelativeValue = 100

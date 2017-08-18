@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         print(docDir)
         
         // read from Disk
-        if let val = UserDefaults.standard.object(forKey: "num") as? Int{   // casting to Int, if it Int..
+        if let val = UserDefaults.standard.object(forKey: "num") as? Int{   // casting to Int, if it Int continue
             self.num = val
         }
         

@@ -29,7 +29,7 @@
 		<string>armv7</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>permit photo save to galery</string>
+	<string>permit photo saved to galery</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

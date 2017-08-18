@@ -19,7 +19,7 @@ class CheckBox: UIImageView {
         }
     }
 
-    //from stroryboard
+    //from storyboard
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()

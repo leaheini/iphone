@@ -27,7 +27,7 @@ class RadioStation: NSObject {
     
     class func readFile() -> [RadioStation]{
         // validate file exist by retrieving its path
-        guard let path = Bundle.main.path(forResource: "Stations", ofType: "plist") else {
+        guard let path = Bundle.main.path(forResource: "Stations", ofType: "plist") else {  // the name of the PropertyList we made
             print("no file found")
             return []
         }

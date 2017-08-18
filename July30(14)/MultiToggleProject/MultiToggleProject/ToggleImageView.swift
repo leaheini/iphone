@@ -17,6 +17,7 @@ class ToggleImageView: UIImageView {
             refresh()
         }
     }
+    
     var index : Int = 0
     
     //from stroryboard

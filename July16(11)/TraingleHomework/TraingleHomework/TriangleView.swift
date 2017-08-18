@@ -24,7 +24,7 @@ import UIKit
         }
     }
     
-    private var _lineWidth : CGFloat = 1
+    private var _lineWidth : CGFloat = 5
     @IBInspectable var lineWidth : CGFloat{
         get{
             return _lineWidth
@@ -54,12 +54,12 @@ import UIKit
         
         context.move(to: CGPoint(x: w * 0.5, y: h * 0.1))
         context.addLine(to: CGPoint(x: w * 0.1, y: h * 0.9))
-        context.addLine(to: CGPoint(x: w * 0.9, y: h * 0.9))
+        context.addLine(to: CGPoint(x: w * 0.9, y: h * 0.9))    // w -> 0.5-0.1 = 0.9-0.5 = 0.4 -> shoosh triangle
         context.closePath()
         
         //context.setStrokeColor(frameColor.cgColor)
-        frameColor.setStroke()
-        fillColor.setFill()
+        frameColor.setStroke()   // frameColor from above
+        fillColor.setFill()      // fillColor from above
         context.setLineWidth(lineWidth)
         
         context.drawPath(using: .fillStroke)   // fill + stroke

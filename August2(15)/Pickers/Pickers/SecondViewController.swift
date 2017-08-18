@@ -17,16 +17,16 @@ class SecondViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         super.viewDidLoad()
         
         demoPickerView.dataSource = self  // just because we declared UIPickerViewDataSource
-        demoPickerView.delegate = self
+        demoPickerView.delegate = self    // just because we declared UIPickerViewDelegate
     }
 
     //MARK: - UIPickerView Data Source - 
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {    // = number of rows
         return 3
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return (component + 1) * 2
+        return (component + 1) * 2    // component = row number 0,1,2
     }
     
     //MARK: - UIPickerView Delegate -

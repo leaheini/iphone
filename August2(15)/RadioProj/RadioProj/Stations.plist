@@ -16,9 +16,27 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Persian</string>
+		<string>IsraLA</string>
 		<key>url</key>
-		<string>http://headend1.iranseda.ir/liveHLS/radio-salamat.m3u8</string>
+		<string>http://50.7.70.58:8684/;?1456394446026.mp3</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>102FM</string>
+		<key>url</key>
+		<string>http://102.livecdn.biz/102fm_aac?</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>99FM</string>
+		<key>url</key>
+		<string>http://99.livecdn.biz/99fm</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>100FM</string>
+		<key>url</key>
+		<string>http://gb25.streamgates.net/radios-audio/100fmAudio/icecast.audio</string>
 	</dict>
 </array>
 </plist>

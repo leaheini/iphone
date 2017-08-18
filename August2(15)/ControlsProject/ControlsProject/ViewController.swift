@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var mySwitch: UISwitch!
     @IBOutlet weak var connectionSwitch: UISwitch!
     
-    
     @IBOutlet weak var stepperLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
@@ -29,11 +28,10 @@ class ViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         reachability = Reachability.forInternetConnection()
-        super .init(coder: aDecoder)
+        super.init(coder: aDecoder)
     }
     
     @IBAction func mySwitchAction(_ sender: UISwitch) {
-        
         switchStatusLabel.text = sender.isOn.description
         // or
         //switchStatusLabel.text = sender.isOn ? "on" : "off"
@@ -48,10 +46,10 @@ class ViewController: UIViewController {
         // or trigger action
         //mySwitch.sendActions(for: .valueChanged)
         
-        //// make the switcher double bigger
+        //// make the switcher bigger X2
         mySwitch.transform = CGAffineTransform(scaleX: 2, y: 2)
         
-        // switch will be on if internet connect
+        // switch will be ON if internet connect
         connectionSwitch.isOn = reachability.currentReachabilityStatus() != NotReachable
         
         //notification every time the internet status changed
@@ -61,11 +59,6 @@ class ViewController: UIViewController {
         }
         
         stepper.sendActions(for: .valueChanged)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 

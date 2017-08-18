@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B8151DC1F1AB233006BACD4 /* HwTraingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8151DB1F1AB233006BACD4 /* HwTraingleView.swift */; };
+		5B8151DE1F1AB5E9006BACD4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8151DD1F1AB5E9006BACD4 /* ThirdViewController.swift */; };
 		6DB5C7D11F162F7D00D98241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5C7D01F162F7D00D98241 /* AppDelegate.swift */; };
 		6DB5C7D31F162F7D00D98241 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5C7D21F162F7D00D98241 /* FirstViewController.swift */; };
 		6DB5C7D51F162F7D00D98241 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5C7D41F162F7D00D98241 /* SecondViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B8151DB1F1AB233006BACD4 /* HwTraingleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HwTraingleView.swift; sourceTree = "<group>"; };
+		5B8151DD1F1AB5E9006BACD4 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		6DB5C7CD1F162F7D00D98241 /* DrawProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB5C7D01F162F7D00D98241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DB5C7D21F162F7D00D98241 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 				6DB5C7D01F162F7D00D98241 /* AppDelegate.swift */,
 				6DB5C7D21F162F7D00D98241 /* FirstViewController.swift */,
 				6DB5C7D41F162F7D00D98241 /* SecondViewController.swift */,
+				5B8151DD1F1AB5E9006BACD4 /* ThirdViewController.swift */,
 				6DB5C7D61F162F7D00D98241 /* Main.storyboard */,
 				6DB5C7D91F162F7D00D98241 /* Assets.xcassets */,
 				6DB5C7DB1F162F7D00D98241 /* LaunchScreen.storyboard */,
@@ -78,8 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				6DB5C7E51F16300100D98241 /* MyView.swift */,
-				6DB5C7E91F164C2D00D98241 /* smileView.swift */,
 				6DB5C7E71F16415500D98241 /* CircleView.swift */,
+				6DB5C7E91F164C2D00D98241 /* smileView.swift */,
+				5B8151DB1F1AB233006BACD4 /* HwTraingleView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -159,8 +165,10 @@
 				6DB5C7E61F16300100D98241 /* MyView.swift in Sources */,
 				6DB5C7E81F16415500D98241 /* CircleView.swift in Sources */,
 				6DB5C7D51F162F7D00D98241 /* SecondViewController.swift in Sources */,
+				5B8151DC1F1AB233006BACD4 /* HwTraingleView.swift in Sources */,
 				6DB5C7D11F162F7D00D98241 /* AppDelegate.swift in Sources */,
 				6DB5C7D31F162F7D00D98241 /* FirstViewController.swift in Sources */,
+				5B8151DE1F1AB5E9006BACD4 /* ThirdViewController.swift in Sources */,
 				6DB5C7EA1F164C2D00D98241 /* smileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +329,7 @@
 				6DB5C7E31F162F7D00D98241 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

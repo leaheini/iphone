@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // option 1: with storyboard
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         guard let checkImageView = sender.view as? UIImageView else {
             return

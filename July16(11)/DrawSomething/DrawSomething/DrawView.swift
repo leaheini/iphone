@@ -11,8 +11,8 @@ import UIKit
 class DrawView: UIView {
     
     //var beziers : [UIBezierPath] = []
-    private var beziers : [UIBezierPath] = []
-    private var redoBeziers : [UIBezierPath] = []
+    private var beziers : [UIBezierPath] = []    // we need array to save each draw
+    private var redoBeziers : [UIBezierPath] = []   // array to save the draw we undo to do redo
     
     var bezier : UIBezierPath = UIBezierPath()   // akuma which manage all the funcs to draw
     var strokeWidth : CGFloat = 1
@@ -45,11 +45,11 @@ class DrawView: UIView {
         guard !redoBeziers.isEmpty else {
             return
         }
-        let b = redoBeziers.removeLast()
-        beziers.append(b)
+        beziers.append(redoBeziers.removeLast())
         setNeedsDisplay()
     }
     
+    /////    setup code /////
     //from stroryboard
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -63,12 +63,13 @@ class DrawView: UIView {
     }
     
     private func setup(){
-        isMultipleTouchEnabled = false   // draw with only one finger
+        isMultipleTouchEnabled = false   // anable to draw with only one finger
     }
+    //////////////////////////
 
     
     private func startWith(point : CGPoint){
-        //bezier.move(to: point)    // move - go to start point
+        //bezier.move(to: point)    // move -> go to start point
         
         redoBeziers = []
 
@@ -89,7 +90,6 @@ class DrawView: UIView {
         b.addLine(to: point)
         setNeedsDisplay()
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

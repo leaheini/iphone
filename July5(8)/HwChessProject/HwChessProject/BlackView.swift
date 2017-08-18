@@ -8,6 +8,7 @@
 
 import UIKit
 
+//@IBDesignable
 @IBDesignable class BlackView: UIView {
 
     //from stroryboard
@@ -21,7 +22,7 @@ import UIKit
         super.init(frame: frame)
         setup()
     }
-    
+
     private func setup(){
         self.backgroundColor = .black
     }

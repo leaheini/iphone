@@ -16,23 +16,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.textColor = .green
+        label.textColor = .blue
         label.font = UIFont.italicSystemFont(ofSize: 24)
-        label.highlightedTextColor = .red
-        mySwitch.sendActions(for: .valueChanged)    // call the action to make it red on laud
-        
+        label.highlightedTextColor = .magenta
+        mySwitch.sendActions(for: .valueChanged)    // on the switch to make it red on load
     }
     
     @IBAction func highlightedAction(_ sender: UISwitch) {
         label.isHighlighted = sender.isOn
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        
-    }
-
 
 }
 

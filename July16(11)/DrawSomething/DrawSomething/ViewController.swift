@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var drawView: DrawView!
     @IBOutlet weak var colorBarButtonItem: UIBarButtonItem!
     
+    //  to make undo when someone shake the iphone
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         guard motion == .motionShake else {
             return
@@ -51,15 +52,15 @@ class ViewController: UIViewController {
     @IBAction func redoAction(_ sender: Any) {
         drawView.redo()
     }
-
+    
 }
 
+// implementation to the protocol + its method
 extension ViewController : ColorPickerViewControllerDelegate{
     func controller(_ controller : ColorPickerViewController, didSelectColor color : UIColor?){
         // getting info from the protocol
         drawView.strokColor = color
         colorBarButtonItem.tintColor = color
     }
-    
 }
 

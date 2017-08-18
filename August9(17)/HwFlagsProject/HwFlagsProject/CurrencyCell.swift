@@ -17,7 +17,7 @@ class CurrencyCell: UITableViewCell {
     
     func configure(with currency : Currency){
         codeLabel.text = currency.code
-        valueLabel.text = currency.value.description
+        valueLabel.text = currency.value.description    // .description cause its flaut
         flagImageView.image = currency.image
     }
     

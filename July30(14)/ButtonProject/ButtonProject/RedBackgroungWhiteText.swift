@@ -29,9 +29,8 @@ class RedBackgroungWhiteText: UIButton {
         layer.borderColor = UIColor.red.cgColor   // without border witdh so no seen
         self.layer.cornerRadius = self.bounds.height * 0.5  
         self.layer.masksToBounds = true   // wont out from borders
-        self.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)   // spacing
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)   // to make it bold
-        
+        self.contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)  // spacing text from border
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)   // to make text bold
     }
     
     //after constriants refresh

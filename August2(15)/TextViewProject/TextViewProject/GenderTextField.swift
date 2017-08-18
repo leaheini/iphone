@@ -51,7 +51,7 @@ class GenderTextField: UITextField {
         self.inputView = pickerView
     }
     
-    // ovveride keyboard open methos
+    // overide keyboard open method
     override func becomeFirstResponder() -> Bool {
         let result = super.becomeFirstResponder()
         
@@ -61,7 +61,6 @@ class GenderTextField: UITextField {
         
         return result
     }
-
     
 }
 

@@ -17,6 +17,7 @@ class BirthdateTextField: ToolbarTextField {
         }
     }
     
+    // because inheret from ToolbarTextField which has akso setup, we delete the inits
     override func setup(){
         super.setup()
         
@@ -44,6 +45,7 @@ class BirthdateTextField: ToolbarTextField {
         return r
     }
     
+    // #selector
     func dateChanged(_ sender : UIDatePicker){
         // formatter in order to show the date nice
         let formatter = DateFormatter()
@@ -51,7 +53,7 @@ class BirthdateTextField: ToolbarTextField {
         
         self.text = formatter.string(from: sender.date)
         
-        // if someone listem to changes in textFiled
+        // if someone listen to changes in textFiled
         self.sendActions(for: .editingChanged)
     }
 

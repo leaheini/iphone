@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         hideSwitch.sendActions(for: .valueChanged)
         //isHiddenAction(hideSwitch)
         
+        //to initialize the start value from slider to UIView
         alphaSliderAction(alphaSlider)
         
         //adding background
@@ -43,19 +44,17 @@ class ViewController: UIViewController {
         imageView.image = #imageLiteral(resourceName: "background")
         
         //self.view.addSubview(imageView)
-
-        //put background behind
-        //view.sendSubview(toBack: imageView)
+        //view.sendSubview(toBack: imageView)    //put background behind
         
         //or instead of the 2 sentences
-        self.view.insertSubview(imageView, at: 0)
+        self.view.insertSubview(imageView, at: 0)    //layer 0
     }
     
     @IBAction func alphaBackgroundAction(_ sender: UISlider) {
         uiView.backgroundColor = uiView.backgroundColor?.withAlphaComponent(CGFloat(sender.value))
     }
     
-    @IBAction func buttonPresed(_ sender: Any) {
+    @IBAction func buttonPressed(_ sender: Any) {
         print(#function)
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BA8B1F31F366F8200EAD450 /* BirthdayDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8B1F21F366F8200EAD450 /* BirthdayDatePicker.swift */; };
 		6DBC575C1F32009B00E68896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBC575B1F32009B00E68896 /* AppDelegate.swift */; };
 		6DBC575E1F32009B00E68896 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBC575D1F32009B00E68896 /* ViewController.swift */; };
 		6DBC57611F32009B00E68896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBC575F1F32009B00E68896 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BA8B1F21F366F8200EAD450 /* BirthdayDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayDatePicker.swift; sourceTree = "<group>"; };
 		6DBC57581F32009B00E68896 /* TextViewProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextViewProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBC575B1F32009B00E68896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DBC575D1F32009B00E68896 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				6DBC576E1F32045E00E68896 /* GenderTextField.swift */,
+				5BA8B1F21F366F8200EAD450 /* BirthdayDatePicker.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				6DBC575E1F32009B00E68896 /* ViewController.swift in Sources */,
 				6DBC576F1F32045E00E68896 /* GenderTextField.swift in Sources */,
+				5BA8B1F31F366F8200EAD450 /* BirthdayDatePicker.swift in Sources */,
 				6DBC575C1F32009B00E68896 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +315,7 @@
 				6DBC576C1F32009B00E68896 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

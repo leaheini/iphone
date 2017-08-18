@@ -62,7 +62,7 @@ import UIKit
             center: CGPoint(x: bounds.midX, y: bounds.midY),
             radius: min(bounds.width, bounds.height) / 2 - d,
             startAngle: 0,
-            endAngle: CGFloat.pi * 2,
+            endAngle: CGFloat.pi * 2,    // 180 * 2 = 360
             clockwise: true
         )
         
@@ -70,7 +70,7 @@ import UIKit
         
         context.strokePath()   //draw the frame
         
-        //make smile
+        //make smile draw
         //context.move(to: <#T##CGPoint#>)
         //context.addCurve(to: <#T##CGPoint#>, control1: <#T##CGPoint#>, control2: <#T##CGPoint#>)
         

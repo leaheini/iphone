@@ -15,7 +15,7 @@ extension Date{
             formatter.dateStyle = .medium
             formatter.timeStyle = .medium
             
-            formatter.doesRelativeDateFormatting = true // writing tomorrow, yesterday...
+            formatter.doesRelativeDateFormatting = true // writing today, tomorrow, yesterday...
             
             return formatter.string(from: self)
         }

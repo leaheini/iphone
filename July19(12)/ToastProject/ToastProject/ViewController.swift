@@ -17,13 +17,13 @@ class ViewController: UIViewController {
     
     
     @IBAction func buttonAction(_ sender: Any) {
-        //option 1:
+        //option 1: with the class
         //ToastLabel.toast(with: "test1", on: self.view, fadeInDuration: 3, fadeOutTuration: 3, relativeVerticalPosition: 0.4)
         
-        //option 2:
+        //option 2: with the extension to UIView
         //self.view.toast(with: "test2")
         
-        //option 3:
+        //option 3: with the extension to String   -> the best option 
         "My Toast".toast()
     }
 

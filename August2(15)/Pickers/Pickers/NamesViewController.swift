@@ -25,8 +25,6 @@ class NamesViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     //MARK: - UIPickerView Data Source -
@@ -52,7 +50,7 @@ class NamesViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let label = UILabel(frame: CGRect(origin: .zero, size: size))
         
         label.text = "     " + (component == 0 ? firstName[row] : lastName[row])
-        label.textAlignment = .right
+        label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.adjustsFontSizeToFitWidth = true
         

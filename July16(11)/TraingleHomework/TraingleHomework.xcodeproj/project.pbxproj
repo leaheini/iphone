@@ -58,8 +58,8 @@
 		6DB5C8141F1B39ED00D98241 /* TraingleHomework */ = {
 			isa = PBXGroup;
 			children = (
-				6DB5C8271F1B39F300D98241 /* View */,
 				6DB5C8151F1B39ED00D98241 /* AppDelegate.swift */,
+				6DB5C8271F1B39F300D98241 /* View */,
 				6DB5C8171F1B39ED00D98241 /* ViewController.swift */,
 				6DB5C82A1F1B49D100D98241 /* ColorPickerViewController.swift */,
 				6DB5C8191F1B39ED00D98241 /* Main.storyboard */,
@@ -313,6 +313,7 @@
 				6DB5C8261F1B39ED00D98241 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

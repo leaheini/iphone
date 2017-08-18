@@ -62,8 +62,8 @@
 		6DB5C8371F1B71B500D98241 /* DrawSomething */ = {
 			isa = PBXGroup;
 			children = (
-				6DB5C84A1F1B71F800D98241 /* View */,
 				6DB5C8381F1B71B500D98241 /* AppDelegate.swift */,
+				6DB5C84A1F1B71F800D98241 /* View */,
 				6DB5C83A1F1B71B500D98241 /* ViewController.swift */,
 				6DB5C84F1F1B8E5100D98241 /* ColorPickerViewController.swift */,
 				6DB5C83C1F1B71B500D98241 /* Main.storyboard */,

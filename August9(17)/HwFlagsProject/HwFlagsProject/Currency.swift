@@ -9,12 +9,12 @@
 import UIKit
 
 class Currency: NSObject {
-    let code : String
-    let value : Double
+    let code : String    // to the name of the state
+    let value : Double   // to the currency money
     
     var image : UIImage?{
         get{
-            return UIImage(named: code.lowercased())
+            return UIImage(named: code.lowercased())  // search auto the state name on assets
         }
     }
     

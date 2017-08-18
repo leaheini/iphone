@@ -10,7 +10,7 @@ import UIKit.UIGestureRecognizerSubclass
 
 @available(iOS 9.0, *)
 class ForceTouchGestureRecognizer: UIGestureRecognizer {
-    var force : CGFloat = 0
+    var force : CGFloat = 0    // init start the click force 0
     
     convenience init(){
         self.init(target:nil,action:nil)
@@ -46,14 +46,14 @@ class ForceTouchGestureRecognizer: UIGestureRecognizer {
             return
         }
         
-        self.force = t.force    // element force we create above
+        self.force = t.force    // self.force = element force we create above
         // fire IBAction
         self.state = state    // state is element of UIGestureRecognizer = the state we send to the func
     }
     
     override func reset() {
         super.reset()
-        force = 0           // reset the force
+        force = 0           // reset the force, no sinergia of force
     }
     
 }
