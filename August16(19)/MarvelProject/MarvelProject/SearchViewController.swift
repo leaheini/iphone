@@ -53,7 +53,7 @@ extension SearchViewController : UISearchBarDelegate{
         collectionArray = []
         collectionView.reloadData()
         
-        searchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()  // close keyboard
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

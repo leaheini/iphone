@@ -47,6 +47,7 @@ class MarvelManager: NSObject {
                 return
             }
             
+            // sucsses code '200'
             guard let code = json["code"] as? Int else{
                 return
             }
@@ -62,7 +63,7 @@ class MarvelManager: NSObject {
             let data = json["data"] as? [String:Any] ?? [:]
             let results = data["results"] as? [[String:Any]] ?? []
             
-            // flatMap do for loop and return array of Characters from the first argument
+            // flatMap do forLoop and return array of Characters from the first argument
             let characters : [Character] = results.flatMap{ Character($0) }
             completion(characters, nil)
 

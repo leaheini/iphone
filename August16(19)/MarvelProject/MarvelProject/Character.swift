@@ -9,7 +9,7 @@
 import UIKit
 
 class Character: NSObject {
-    let id : Int64  // 8 byte - the biggest (like long)
+    let id : Int64  // = 8 byte - the biggest (same as Long)
     let name : String
     let thumbnailURL : URL?
     
