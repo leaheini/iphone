@@ -95,13 +95,15 @@ class SearchViewController: UIViewController {
 extension SearchViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // remove the spacing between the cells
         /*
-         w = 360
-         c = 3
-         s = 100 + (360 % 100 = 60) / 3 = 100 + 20 = 120
+         we build every cell 100 X 100 on storyboard
+         width = 360
+         cells = 3
+         sizeForItem = 100 + (360 % 100 = 60) / 3 = 100 + 20 = 120     // adding width to each cell
          */
         let w = Int(collectionView.bounds.width)
-        let c = w / 100      // number of cells in row
+        let c = w / 100       // number of cells in row
         let s = 100 + (w % 100) / c
         
         return CGSize(width: s, height: s)
