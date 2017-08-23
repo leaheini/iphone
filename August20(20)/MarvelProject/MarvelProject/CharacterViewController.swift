@@ -11,6 +11,11 @@ import SDWebImage
 
 class CharacterViewController: UIViewController {
     
+    @IBOutlet var textViewTopLayout: NSLayoutConstraint!
+    var defaultTop : CGFloat = 0
+    var defaultOffset : CGFloat = 0
+    
+    
     @IBOutlet var tableView: UITableView!
     var tableArray : [Comic] = []
     
@@ -23,6 +28,9 @@ class CharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        defaultTop = textViewTopLayout.constant
+        defaultOffset = defaultTop * 2 + textViewHeightLayout.constant
+        
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         
@@ -30,7 +38,7 @@ class CharacterViewController: UIViewController {
             textViewHeightLayout.constant = 0
         }
         
-        tableView.contentInset = UIEdgeInsets(top: 32 + textViewHeightLayout.constant, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: defaultOffset, left: 0, bottom: 0, right: 0)
         
         navigationItem.title = char.name
         descTextView.text = char.desc
@@ -59,30 +67,45 @@ extension CharacterViewController : UITableViewDelegate, UITableViewDataSource{
     
     // 2 methods must by the data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableArray.count
+        return 1 + tableArray.count    // 1 of the title
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let isTitle = indexPath.row == 0
+        let identifier = isTitle ? "title_cell" : "cell"
         
-        let comic : Comic = tableArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         
         let label = cell.viewWithTag(1) as? UILabel
-        label?.text = comic.title
-        label?.textColor = .red
-        //cell.textLabel?.text = comic.title
-        
-        cell.accessoryType = comic.purchaseURL == nil ? .none : .disclosureIndicator  // if nil dont show the >
-        
-        cell.backgroundColor = UIColor.white.withAlphaComponent(0.6)
+        if isTitle{
+            
+            label?.text = "Comics"
+            
+        } else {
+            
+            let comic : Comic = tableArray[indexPath.row - 1]   // cause rows are one more from the array
+
+            label?.text = comic.title
+            label?.textColor = .red
+            //cell.textLabel?.text = comic.title
+            
+            cell.accessoryType = comic.purchaseURL == nil ? .none : .disclosureIndicator  // if nil dont show the >
+            
+            //cell.backgroundColor = UIColor.white.withAlphaComponent(0.6)  // we do by story
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let comic: Comic = tableArray[indexPath.row]
+        let row = indexPath.row - 1
+        guard row >= 0, row < tableArray.count else {
+            return
+        }
+        
+        let comic: Comic = tableArray[row]
 
         guard let url = comic.purchaseURL else{
             return
@@ -95,6 +118,20 @@ extension CharacterViewController : UITableViewDelegate, UITableViewDataSource{
         
         navigationController?.show(webVC, sender: nil)
         // or    navigationController?.pushViewController(webVC, animated: true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        var y = scrollView.contentOffset.y
+        y = min(y,0)
+        
+        let delta = max(abs(defaultOffset) - abs(y) , 0)   // abs = ערך מוחלט    // max so the desc wont get down with the table
+        
+        textViewTopLayout.constant = defaultTop - delta   // defaultTop on story 16 from top
+
+        
+        print("y: \(scrollView.contentOffset.y)")
+        print("delta: \(delta)")
     }
     
 }

@@ -164,7 +164,27 @@
                                                 <constraint firstItem="ijo-GL-Ish" firstAttribute="centerY" secondItem="W5f-hS-5cT" secondAttribute="centerY" id="rPd-Es-SHA"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="title_cell" id="erX-iI-6oZ">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erX-iI-6oZ" id="kyl-Nx-cQU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKm-EM-Z6R">
+                                                    <rect key="frame" x="132" y="3.5" width="112" height="38.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yKm-EM-Z6R" firstAttribute="centerX" secondItem="kyl-Nx-cQU" secondAttribute="centerX" id="bga-dS-hV1"/>
+                                                <constraint firstItem="yKm-EM-Z6R" firstAttribute="centerY" secondItem="kyl-Nx-cQU" secondAttribute="centerY" id="wXk-ZN-GPb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -193,6 +213,7 @@
                         <outlet property="descTextView" destination="Ln5-IJ-shL" id="hxM-87-RRJ"/>
                         <outlet property="tableView" destination="ZCC-zj-Cw6" id="3RG-EX-JE9"/>
                         <outlet property="textViewHeightLayout" destination="y9I-8x-nnG" id="kqx-8A-Wfg"/>
+                        <outlet property="textViewTopLayout" destination="aAF-Ym-jfk" id="MWa-sT-CK6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgD-lQ-HbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
