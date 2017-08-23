@@ -31,13 +31,14 @@ class CharacterViewController: UIViewController {
         defaultTop = textViewTopLayout.constant
         defaultOffset = defaultTop * 2 + textViewHeightLayout.constant
         
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear     //שקוף
+        tableView.separatorStyle = .none     // remove the lines between the rows at the table view
         
         if char.desc.isEmpty{
             textViewHeightLayout.constant = 0
         }
         
+        // to start the table not from top of the screen
         tableView.contentInset = UIEdgeInsets(top: defaultOffset, left: 0, bottom: 0, right: 0)
         
         navigationItem.title = char.name

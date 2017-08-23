@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
         
         let bottomControl = UIRefreshControl()
         bottomControl.addTarget(self, action: #selector(loadNextPage), for: .valueChanged)
-        bottomControl.triggerVerticalOffset = 100   // how many to scroll so it will react
+        bottomControl.triggerVerticalOffset = 100   //100 px // how many to scroll so it will react
         collectionView.bottomRefreshControl = bottomControl
     }
     

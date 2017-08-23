@@ -40,13 +40,27 @@ class Comic: NSObject {
             self.purchaseURL = nil
         }
         
-        /* take from facebook
-        //2 כתיבה מקוצרת
-        self.purchaseURL = urls.flatMap(<#T##transform: ([String : Any]) throws -> ElementOfResult?##([String : Any]) throws -> ElementOfResult?#>)
         
-        self.purchaseURL = urls.filter({ $0["type"] as? String == "purchase"
-        })
-     */
+        //2 כתיבה מקוצרת
+        /*
+         self.purchaseURL = urls.flatMap{
+         guard let str = $0["type"] as? String,
+         str == "purchase",
+         let url = $0["url"] as? String
+         else {
+         return  nil
+         }
+         return URL(string: url)
+         }.first
+         */
+        
+        //or
+        /*
+         self.purchaseURL = urls.filter({ $0["type"] as? String == "purchase"}).flatMap{
+         URL(string: $0["url"] as? String ?? "")
+         }.first
+         */
+        
     }
     
 }

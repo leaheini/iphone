@@ -18,13 +18,13 @@ class MarvelManager: NSObject {
     private let privateKey = "b8fcab014172804adbe7c54f98068c0ec20eb6a5"
     private let publicKey = "aafca0489da97492acc924be7026a3f3"
     
-    private func defaultParams() -> JSON{
+    private func defaultParams() -> JSON{           // JSON = [String:Any]
         // hash string = timestamp + privateKey + publicKey
-        // the server want to get: timestamp, publicKey, hash
         let timestamp = Int(Date().timeIntervalSince1970)
         let hashString = "\(timestamp)" + privateKey + publicKey
-        let md5String = hashString.md5()
+        let md5String = hashString.md5()   //לקבל קוד מוצפן
         
+        // the server want to get: timestamp, publicKey, hash        
         return [
             "hash":md5String,
             "apikey":publicKey,
@@ -32,8 +32,8 @@ class MarvelManager: NSObject {
         ]
     }
     
-    //typealias Matrix = [[Int]]
-    typealias JSON = [String:Any]
+    
+    typealias JSON = [String:Any]   //typealias = to give something long one short name
     typealias DictionaryResultCompletion = ([JSON]?, Error?) -> Void
     private func sendGetRequest(endPoint : String,    // the end to the URL
                                 params : [String:Any],
@@ -65,9 +65,6 @@ class MarvelManager: NSObject {
             let data = json["data"] as? JSON ?? [:]
             let jsonArr = data["results"] as? [JSON] ?? []
             
-            // flatMap do forLoop and return array of Characters from the first argument
-            //let characters : [Character] = results.flatMap{ Character($0) }
-            
             completion(jsonArr, nil)
             
         }
@@ -85,43 +82,13 @@ class MarvelManager: NSObject {
         params["limit"] = recsPerPage
         params["offset"] = recsPerPage * page
         
+        // flatMap do forLoop and return array of Characters from the first argument
+        //let characters : [Character] = results.flatMap{ Character($0) }
+        
         sendGetRequest(endPoint: "characters", params: params) { (jsonArr, err) in
             let arr = jsonArr?.flatMap{ Character($0) }
             completion(arr, err)
         }
-        
-        /*
-        Alamofire.request(url, method: .get, parameters: params).responseJSON { (dataRes) in
-            
-            guard let json = dataRes.result.value as? [String:Any] else{
-                //notify about an error
-                completion(nil, dataRes.error)
-                return
-            }
-            
-            // sucsses code '200'
-            guard let code = json["code"] as? Int else{
-                return
-            }
-            
-            guard code >= 200 && code <= 299 else{
-                //http error
-                let status = json["status"] as? String ?? ""
-                let err = NSError(domain: "marvel", code: code, userInfo: [NSLocalizedDescriptionKey : status])
-                completion(nil, err as Error)
-                return
-            }
-
-            let data = json["data"] as? [String:Any] ?? [:]
-            let results = data["results"] as? [[String:Any]] ?? []
-            
-            // flatMap do forLoop and return array of Characters from the first argument
-            let characters : [Character] = results.flatMap{ Character($0) }
-            completion(characters, nil)
-
-        }
-        */
-        
     }
     
     func getComicsFor(charId : String,
