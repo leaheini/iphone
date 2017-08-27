@@ -2,14 +2,13 @@
 //  AppManager.swift
 //  LocationProject
 //
-//  Created by hackeru on 23/08/2017.
-//  Copyright © 2017 com.hackeru. All rights reserved.
+//  Created by Benny Davidovitz on 23/08/2017.
+//  Copyright © 2017 hackeru. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 
-//27.8
 extension Notification.Name{
     static var locationUpdate : Notification.Name{
         get{
@@ -19,7 +18,6 @@ extension Notification.Name{
 }
 
 class AppManager: NSObject {
-
     static let shared = AppManager()
     
     private let locationManager : CLLocationManager
@@ -34,34 +32,32 @@ class AppManager: NSObject {
         
         super.init()
         
-        locationManager.activityType = .automotiveNavigation   // navigate at car
-        locationManager.distanceFilter = 50 //meter  // notify the user after 50 m   //kCLDistanceFilterNone - notify after every change
+        locationManager.activityType = .automotiveNavigation
+        locationManager.distanceFilter = 50 //meter //kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         locationManager.delegate = self
     }
     
     func startLocation(){
-        let authStatus = CLLocationManager.authorizationStatus()  // get the aprove of the user to get his location
+        let authStatus = CLLocationManager.authorizationStatus()
         switch authStatus {
-        case .restricted:   //old iphone without location
+        case .restricted:
             return
         case .authorizedAlways, .authorizedWhenInUse:
             locationManager.startUpdatingLocation()
         case .notDetermined:
             //also background
             //locationManager.requestAlwaysAuthorization()
-            //or
-            //just foreground - only when the app is open
+            //just foreground
             locationManager.requestWhenInUseAuthorization()
         case .denied:
-            //show alert to go to settings to approve location
+            //show alert
             let alert = UIAlertController(title: "Error", message: "Please authorize location services", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Nope", style: .cancel, handler: nil))
-            
-            func handler(_ action : UIAlertAction){   // func to open the settings
-                guard let url = URL(string: UIApplicationOpenSettingsURLString) else {
+            func handler(_ action : UIAlertAction){
+                guard let url = URL(string: UIApplicationOpenSettingsURLString) else{
                     return
                 }
                 
@@ -70,19 +66,22 @@ class AppManager: NSObject {
             
             alert.addAction(UIAlertAction(title: "Settings", style: .destructive, handler: handler))
             
-            let rootVC = UIApplication.shared.delegate?.window??.rootViewController   //cause this is class and not VC
+            let rootVC = UIApplication.shared.delegate?.window??.rootViewController
             rootVC?.present(alert, animated: true, completion: nil)
+            
+            
         }
     }
-    
 }
 
 extension AppManager : CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         print(locations[0])
         
-        NotificationCenter.default.post(name: .locationUpdate, object: self)       //27.8
+        NotificationCenter.default.post(name: .locationUpdate, object: self)
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -95,6 +94,25 @@ extension AppManager : CLLocationManagerDelegate{
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
