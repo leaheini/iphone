@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.5.0)
+  - CCBottomRefreshControl (0.5.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - CCBottomRefreshControl
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  CCBottomRefreshControl: 389780b4488321c91d18f66a6da5ef9606df6de5
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+
+PODFILE CHECKSUM: 30a6769c641839ff23e3eed76838d07b465ca706
+
+COCOAPODS: 1.2.1
