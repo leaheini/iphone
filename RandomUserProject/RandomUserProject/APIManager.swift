@@ -16,8 +16,8 @@ class APIManager: NSObject {
     
     typealias JSON = [String:Any]
     typealias DictionaryResultCompletion = ([JSON]?, Error?) -> Void
-
-    private func sendGetRequest(completion : @escaping DictionaryResultCompletion){
+    
+    private func sendGetRequest(params : JSON, completion : @escaping DictionaryResultCompletion){
         
         Alamofire.request(baseURL, method: .get).responseJSON { (dataRes) in
             
@@ -31,7 +31,6 @@ class APIManager: NSObject {
             let jsonArr = data["results"] as? [JSON] ?? []
             
             completion(jsonArr, nil)
-            
         }
     }
     
@@ -39,7 +38,10 @@ class APIManager: NSObject {
     func getUsers(page : UInt,
                   completion : @escaping ([User]?, Error?)->Void){
         
-        sendGetRequest() { (jsonArr, err) in
+        var params : JSON = [:]
+        params["page"] = page
+        
+        sendGetRequest(params : params) { (jsonArr, err) in
             let arr = jsonArr?.flatMap{ User($0) }
             completion(arr, err)
         }
