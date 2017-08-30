@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LocalNotificationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nitification text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6Y-YU-Hpv">
+                                <rect key="frame" x="16" y="36" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ynd-PO-7j3">
+                                <rect key="frame" x="0.0" y="82" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="525767197.22104901">
+                                    <!--2017-08-30 06:26:37 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3v-sV-bsA">
+                                <rect key="frame" x="113.5" y="330" width="147" height="30"/>
+                                <state key="normal" title="Schedule Notification"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IhI-Ye-uDL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="R6Y-YU-Hpv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="IGL-nr-IXt"/>
+                            <constraint firstItem="v3v-sV-bsA" firstAttribute="centerX" secondItem="ynd-PO-7j3" secondAttribute="centerX" id="Jgh-Dv-XGC"/>
+                            <constraint firstItem="ynd-PO-7j3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K7t-J6-D7p"/>
+                            <constraint firstItem="ynd-PO-7j3" firstAttribute="top" secondItem="R6Y-YU-Hpv" secondAttribute="bottom" constant="16" id="M9z-D0-CAA"/>
+                            <constraint firstItem="R6Y-YU-Hpv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="SgY-n0-HoI"/>
+                            <constraint firstAttribute="trailing" secondItem="R6Y-YU-Hpv" secondAttribute="trailing" constant="16" id="ZrS-2f-RoD"/>
+                            <constraint firstAttribute="trailing" secondItem="ynd-PO-7j3" secondAttribute="trailing" id="krj-fb-wv1"/>
+                            <constraint firstItem="v3v-sV-bsA" firstAttribute="top" secondItem="ynd-PO-7j3" secondAttribute="bottom" constant="32" id="zPZ-SM-fnD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="ynd-PO-7j3" id="zDl-n3-ZSg"/>
+                        <outlet property="textField" destination="R6Y-YU-Hpv" id="Q7Q-3V-M8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
