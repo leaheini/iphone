@@ -10,13 +10,6 @@ import UIKit
 
 //https://randomuser.me/documentation#errors
 
-extension String{
-    var toDate : Date?{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return formatter.date(from: self)
-    }
-}
 
 class User: NSObject {
     

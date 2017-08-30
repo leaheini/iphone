@@ -13,14 +13,13 @@ class GalleryViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var collectionArray : [User] = []
-    var searchName : String?
     weak var refreashControl : UIRefreshControl!
     var page : UInt = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "randomusergenerator"))
+        //collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "randomusergenerator"))
         
         let control = UIRefreshControl()
         control.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -32,29 +31,23 @@ class GalleryViewController: UIViewController {
         bottomControl.triggerVerticalOffset = 100
         collectionView.bottomRefreshControl = bottomControl
         
+        refresh()
+        
     }
     
     func loadNextPage(){
-        guard let name = searchName else {
-            collectionView.bottomRefreshControl?.endRefreshing()
-            return
-        }
         
         page += 1
-        reload(with: name)
+        reload()
     }
     
     func refresh(){
-        guard let name = searchName else {
-            refreashControl.endRefreshing()
-            return
-        }
         
         page = 0
-        reload(with: name)
+        reload()
     }
     
-    func reload(with name: String){
+    func reload(){
         
         func completion(_ arr : [User]?, _ err : Error?){
             self.refreashControl.endRefreshing()
@@ -75,8 +68,17 @@ class GalleryViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
-        // ***** recs per page ?
         APIManager.manager.getUsers(page: page, completion: completion)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailsVC = segue.destination as? DetailsViewController,
+            let cell = sender as? UserCell,
+            let indexPath = self.collectionView.indexPath(for: cell)
+        {
+            detailsVC.user = self.collectionArray[indexPath.item]
+            
+        }
     }
 
 }
@@ -95,8 +97,8 @@ extension GalleryViewController : UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //remove the spacing between cells
         
+        //remove the spacing between cells
         let width = Int(collectionView.bounds.width)
         let cellsInRow = width / 100
         let size = 100 + (width % 100) / cellsInRow
@@ -107,28 +109,6 @@ extension GalleryViewController : UICollectionViewDataSource, UICollectionViewDe
 }
 
 
-extension GalleryViewController : UISearchBarDelegate{
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        collectionArray = []
-        collectionView.reloadData()
-        
-        searchBar.resignFirstResponder()
-        searchName = nil
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        guard let name = searchBar.text, !name.isEmpty else {
-            return
-        }
-        
-        searchName = name
-        page = 0
-        
-        reload(with: name)
-    }
-}
 
 
 

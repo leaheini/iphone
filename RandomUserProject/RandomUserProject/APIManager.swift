@@ -19,7 +19,8 @@ class APIManager: NSObject {
     
     private func sendGetRequest(params : JSON, completion : @escaping DictionaryResultCompletion){
         
-        Alamofire.request(baseURL, method: .get).responseJSON { (dataRes) in
+        
+        Alamofire.request(baseURL, method: .get, parameters:params).responseJSON { (dataRes) in
             
             guard let json = dataRes.result.value as? JSON else{
                 //notify about an error
@@ -27,19 +28,18 @@ class APIManager: NSObject {
                 return
             }
             
-            let data = json[""] as? JSON ?? [:]
-            let jsonArr = data["results"] as? [JSON] ?? []
+            let jsonArr = json["results"] as? [JSON] ?? []
             
             completion(jsonArr, nil)
         }
     }
     
-    //****** the page isue  with params
     func getUsers(page : UInt,
                   completion : @escaping ([User]?, Error?)->Void){
         
         var params : JSON = [:]
         params["page"] = page
+        params["results"] = 25
         
         sendGetRequest(params : params) { (jsonArr, err) in
             let arr = jsonArr?.flatMap{ User($0) }

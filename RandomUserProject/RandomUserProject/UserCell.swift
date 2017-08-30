@@ -9,12 +9,6 @@
 import UIKit
 import SDWebImage
 
-extension Date{
-    var age : Int{
-        return Calendar.current.dateComponents([.year], from: self, to: Date()).year!
-    }
-}
-
 class UserCell: UICollectionViewCell {
     
     @IBOutlet weak var faceImageView: UIImageView!
@@ -23,8 +17,14 @@ class UserCell: UICollectionViewCell {
     @IBOutlet weak var genderImageView: UIImageView!
     
     func configure(with user : User){
+        
         nameLabel.text = user.fullName
-        ageLabel.text = String(describing: user.dob?.age)
+        
+        if let age = user.dob?.age{
+            ageLabel.text = "\(age)"
+        } else {
+            ageLabel.text = ""
+        }        
         
         faceImageView.image = nil
         if let url = user.picture?.thumbnail{
