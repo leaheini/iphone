@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B3AD72C1F5466840090DFEF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3AD72B1F5466840090DFEF /* UserCell.swift */; };
+		5BB151721F588A9200DCBE09 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB151711F588A9200DCBE09 /* MessageUI.framework */; };
 		6D29B4E11F56C6C100AC0178 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D29B4E01F56C6C100AC0178 /* DetailsViewController.swift */; };
 		6D29B4E31F56C6D700AC0178 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D29B4E21F56C6D700AC0178 /* SettingsViewController.swift */; };
 		6D9B199A1F56FA3700A02CE1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9B19991F56FA3700A02CE1 /* Utils.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		423AE6CD1D6B0AA6908027BD /* Pods-RandomUserProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUserProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUserProject/Pods-RandomUserProject.release.xcconfig"; sourceTree = "<group>"; };
 		5B3AD72B1F5466840090DFEF /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		5BB151711F588A9200DCBE09 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6D29B4E01F56C6C100AC0178 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		6D29B4E21F56C6D700AC0178 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6D9B19991F56FA3700A02CE1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB151721F588A9200DCBE09 /* MessageUI.framework in Frameworks */,
 				C57AA80075752B8A236B70B6 /* Pods_RandomUserProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +128,7 @@
 		CCD08ED3AA7A4B89BDABEFB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5BB151711F588A9200DCBE09 /* MessageUI.framework */,
 				8F62B4D3BF4B7BB0EE3D6D64 /* Pods_RandomUserProject.framework */,
 			);
 			name = Frameworks;

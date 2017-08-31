@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -211,7 +210,7 @@
                                         <rect key="frame" x="0.0" y="282" width="30" height="21.5"/>
                                         <state key="normal" title="cell"/>
                                         <connections>
-                                            <action selector="callAction:" destination="xq7-C7-xKx" eventType="touchUpInside" id="Yoe-ta-Ims"/>
+                                            <action selector="cellAction:" destination="xq7-C7-xKx" eventType="touchUpInside" id="gk5-B5-ARt"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="national" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XF-WK-ckH">
@@ -239,7 +238,7 @@
                     </view>
                     <connections>
                         <outlet property="ageLabel" destination="D0Z-q8-yaa" id="d76-QP-YtT"/>
-                        <outlet property="cellButton" destination="6qi-WP-Z6a" id="Own-Po-l1o"/>
+                        <outlet property="cellButton" destination="6qi-WP-Z6a" id="QBL-W9-MBc"/>
                         <outlet property="dobLabel" destination="1B7-Qd-glb" id="6Yx-FF-G02"/>
                         <outlet property="emailButton" destination="tzv-dT-MWP" id="bJ5-6W-Qs7"/>
                         <outlet property="faceImageView" destination="2gR-25-411" id="OFm-S9-Jbf"/>

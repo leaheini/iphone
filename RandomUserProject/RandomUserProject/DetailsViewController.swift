@@ -11,7 +11,7 @@ import SDWebImage
 import CoreLocation
 import MessageUI
 
-class DetailsViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class DetailsViewController: UIViewController {
     
     @IBOutlet var faceImageView: UIImageView!
     @IBOutlet var ageLabel: UILabel!
@@ -108,13 +108,41 @@ class DetailsViewController: UIViewController, MFMailComposeViewControllerDelega
         }
     }
    
+    func dialANumber(_ sender: UIButton){
+        
+        if let number = sender.currentTitle,
+            let url = URL(string: "tel://" + number),
+            UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        } else{
+            let alert = UIAlertController(title: "Could Not dial a phone number", message: "Your device could not dial a number.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+    }
+    
+    @IBAction func callAction(_ sender: UIButton) {
+        
+        dialANumber(sender)
+    }
+}
+
+extension DetailsViewController : MFMailComposeViewControllerDelegate{
+    
     @IBAction func emailAction(_ sender: UIButton) {
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
-        } /*else {
+        } else {
             self.showSendMailErrorAlert()
-        }*/
+        }
     }
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
@@ -122,29 +150,79 @@ class DetailsViewController: UIViewController, MFMailComposeViewControllerDelega
         mailComposerVC.mailComposeDelegate = self
         
         mailComposerVC.setToRecipients([user.email])
-        //mailComposerVC.setSubject("Sending you an in-app e-mail")
-        //mailComposerVC.setMessageBody("Sending e-mail to random user", isHTML: false)
+        mailComposerVC.setSubject("Sending you an in-app e-mail")
+        mailComposerVC.setMessageBody("Sending e-mail to random user", isHTML: false)
         
         return mailComposerVC
     }
     
-    /*
+    
     func showSendMailErrorAlert() {
         let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .alert)
         
-        sendMailErrorAlert.addAction(UIAlertAction(title: "no", style: .cancel, handler: nil))
-
+        sendMailErrorAlert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+        
         self.present(sendMailErrorAlert, animated: true, completion: nil)
-    }*/
+    }
     
-    // MARK: MFMailComposeViewControllerDelegate Method
+    // MARK: MFMailComposeViewControllerDelegate
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
+}
+
+extension DetailsViewController : MFMessageComposeViewControllerDelegate {
     
-    @IBAction func callAction(_ sender: UIButton) {
-        
+    func sendSMS(){
+        if MFMessageComposeViewController.canSendText(){
+            let msgVC = MFMessageComposeViewController()
+            
+            let smsTextAlert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+            
+            smsTextAlert.addAction(UIAlertAction(title: "Type your message", style: .default, handler: { (_) in
+                guard let smsText = smsTextAlert.textFields?.first?.text else{
+                    return
+                }
+                msgVC.body = smsText
+            }))
+            
+            smsTextAlert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: nil))
+            
+            smsTextAlert.addTextField{
+                $0.placeholder = "Type your sms message"
+            }
+            
+            self.present(smsTextAlert, animated: true, completion: nil)
+            
+            msgVC.recipients = [self.user.cell]
+            msgVC.messageComposeDelegate = self
+            self.present(msgVC, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Could not send sms", message: "Your device could not send sms", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
-
+    @IBAction func cellAction(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Select action", message: "Do you want to call or send SMS?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Call number", style: .default, handler: { (_) in
+            self.dialANumber(sender)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Send SMS", style: .destructive, handler: { (_) in
+            self.sendSMS()
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: MFMessageComposeViewControllerDelegate
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
