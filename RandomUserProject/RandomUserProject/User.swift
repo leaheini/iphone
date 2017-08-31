@@ -8,7 +8,7 @@
 
 import UIKit
 
-//https://randomuser.me/documentation#errors
+//https://randomuser.me/
 
 
 class User: NSObject {
@@ -36,7 +36,7 @@ class User: NSObject {
     let gender : Gender
     
     let fullName : String
-    let location : [String:Any]
+    let location : String
     let email : String
     let login : [String:String]
     let dob : Date?
@@ -57,7 +57,13 @@ class User: NSObject {
         let nameDict = dict["name"] as? [String:String] ?? [:]
         self.fullName = Array(nameDict.values).joined(separator: " ")
         
-        self.location = dict["location"] as? [String:Any] ?? [:]
+        let locationDict = dict["location"] as? [String:Any] ?? [:]
+        var newLocationDict = [String:String]()
+        for (key, value) in locationDict{
+            newLocationDict[key] = "\(value)"
+        }
+        self.location = Array(newLocationDict.values).joined(separator: " ")
+            
         self.email = dict["email"] as? String ?? ""
         self.login = dict["login"] as? [String:String] ?? [:]
         

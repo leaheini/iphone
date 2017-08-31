@@ -27,7 +27,7 @@ class UserCell: UICollectionViewCell {
         }        
         
         faceImageView.image = nil
-        if let url = user.picture?.thumbnail{
+        if let url = user.picture?.medium{
             faceImageView.sd_setImage(with: url)
         } else {
             faceImageView.sd_cancelCurrentImageLoad()

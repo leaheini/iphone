@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="18F-O4-2ZD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="18F-O4-2ZD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -239,11 +239,15 @@
                     </view>
                     <connections>
                         <outlet property="ageLabel" destination="D0Z-q8-yaa" id="d76-QP-YtT"/>
+                        <outlet property="cellButton" destination="6qi-WP-Z6a" id="Own-Po-l1o"/>
                         <outlet property="dobLabel" destination="1B7-Qd-glb" id="6Yx-FF-G02"/>
+                        <outlet property="emailButton" destination="tzv-dT-MWP" id="bJ5-6W-Qs7"/>
                         <outlet property="faceImageView" destination="2gR-25-411" id="OFm-S9-Jbf"/>
                         <outlet property="genderImageView" destination="qXd-3a-lVD" id="sQU-Wp-THS"/>
+                        <outlet property="locationButton" destination="D5d-NH-mkO" id="GM2-oa-Gmw"/>
                         <outlet property="nameTextView" destination="9Uw-Zm-fov" id="Els-pW-Dwt"/>
                         <outlet property="natLabel" destination="2XF-WK-ckH" id="fdD-gt-tz7"/>
+                        <outlet property="phoneButton" destination="SYi-qE-aYV" id="Ge1-Qm-DmT"/>
                         <outlet property="registeredLabel" destination="1aV-QS-6iR" id="FSX-vG-Bt5"/>
                     </connections>
                 </viewController>
