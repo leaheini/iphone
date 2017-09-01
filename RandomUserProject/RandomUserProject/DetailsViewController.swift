@@ -141,7 +141,7 @@ extension DetailsViewController : MFMailComposeViewControllerDelegate{
             let mailComposeViewController = configuredMailComposeViewController()
             self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
-            self.showSendMailErrorAlert()
+            self.showSendMailErrorAlert(with: "Your device could not send e-mail.  Please check e-mail configuration and try again.")
         }
     }
     
@@ -174,14 +174,18 @@ extension DetailsViewController : MFMailComposeViewControllerDelegate{
         
         self.present(alert, animated: true, completion: nil)
         
-        mailComposerVC.setToRecipients([user.email])
+        if user.email.isValidEmail{
+            mailComposerVC.setToRecipients([user.email])
+        } else {
+            showSendMailErrorAlert(with: "Email is not valid")
+        }
         
         return mailComposerVC
     }
     
     
-    func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .alert)
+    func showSendMailErrorAlert(with error : String) {
+        let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: error, preferredStyle: .alert)
         
         sendMailErrorAlert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
         

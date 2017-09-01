@@ -152,7 +152,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leah Eini" textAlignment="center" lineBreakMode="clip" numberOfLines="2" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djy-LV-PNl">
                                         <rect key="frame" x="40" y="0.0" width="192" height="35"/>
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="2760.8000000000002" y="-1146.4767616191905"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="Tfn-2i-CcA">
             <objects>
-                <viewController id="54n-f7-uBf" sceneMemberID="viewController">
+                <viewController id="54n-f7-uBf" customClass="SettingsViewController" customModule="RandomUserProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wGO-QI-Vac"/>
                         <viewControllerLayoutGuide type="bottom" id="ycp-ax-See"/>
@@ -280,6 +280,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="genderSegmentedControl" destination="xJj-D5-PMI" id="qDs-6I-TSC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnZ-Zf-Xvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

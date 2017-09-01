@@ -15,7 +15,7 @@ class GalleryViewController: UIViewController {
     var collectionArray : [User] = []
     weak var refreashControl : UIRefreshControl!
     var page : UInt = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
