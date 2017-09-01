@@ -15,7 +15,7 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet var faceImageView: UIImageView!
     @IBOutlet var ageLabel: UILabel!
-    @IBOutlet var nameTextView: UITextView!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var genderImageView: UIImageView!
     
     @IBOutlet var dobLabel: UILabel!
@@ -44,7 +44,7 @@ class DetailsViewController: UIViewController {
             ageLabel.text = ""
         }
         
-        nameTextView.text = user.fullName
+        nameLabel.text = user.fullName
 
         genderImageView.image = nil
         switch user.gender {
@@ -137,8 +137,8 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController : MFMailComposeViewControllerDelegate{
     
     @IBAction func emailAction(_ sender: UIButton) {
-        let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
+            let mailComposeViewController = configuredMailComposeViewController()
             self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
             self.showSendMailErrorAlert()
@@ -149,9 +149,32 @@ extension DetailsViewController : MFMailComposeViewControllerDelegate{
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
         
+        let alert = UIAlertController(title: nil, message: "Type your email subject and content", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "send email", style: .default, handler: { _ in
+            guard let subject = alert.textFields?.first?.text,
+                let body = alert.textFields?.last?.text else{
+                    return
+            }
+            mailComposerVC.setSubject(subject)
+            mailComposerVC.setMessageBody(body, isHTML: false)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addTextField{
+            $0.placeholder = "type your email subject"
+            $0.keyboardType = .default
+        }
+        
+        alert.addTextField{
+            $0.placeholder = "type your message body"
+            $0.keyboardType = .default
+        }
+        
+        self.present(alert, animated: true, completion: nil)
+        
         mailComposerVC.setToRecipients([user.email])
-        mailComposerVC.setSubject("Sending you an in-app e-mail")
-        mailComposerVC.setMessageBody("Sending e-mail to random user", isHTML: false)
         
         return mailComposerVC
     }

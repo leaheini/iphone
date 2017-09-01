@@ -43,7 +43,7 @@
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leah" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9n-Mm-xQf">
                                                     <rect key="frame" x="1" y="75" width="98" height="12"/>
-                                                    <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -149,13 +149,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Leah Eini" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9Uw-Zm-fov" userLabel="Name">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leah Eini" textAlignment="center" lineBreakMode="clip" numberOfLines="2" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djy-LV-PNl">
                                         <rect key="frame" x="40" y="0.0" width="192" height="35"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-female_filled" translatesAutoresizingMaskIntoConstraints="NO" id="qXd-3a-lVD">
                                         <rect key="frame" x="232" y="0.0" width="40" height="35"/>
                                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -165,9 +165,11 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="djy-LV-PNl" firstAttribute="top" secondItem="9HT-jT-2la" secondAttribute="top" id="GyO-pk-F9o"/>
+                                    <constraint firstItem="djy-LV-PNl" firstAttribute="leading" secondItem="D0Z-q8-yaa" secondAttribute="trailing" id="Q6l-mn-635"/>
                                     <constraint firstItem="D0Z-q8-yaa" firstAttribute="width" secondItem="qXd-3a-lVD" secondAttribute="width" id="QrB-cr-8JO"/>
                                     <constraint firstAttribute="height" constant="35" id="TVm-sC-x1p"/>
-                                    <constraint firstItem="D0Z-q8-yaa" firstAttribute="height" secondItem="9Uw-Zm-fov" secondAttribute="height" id="lcx-lQ-g8W"/>
+                                    <constraint firstItem="qXd-3a-lVD" firstAttribute="leading" secondItem="djy-LV-PNl" secondAttribute="trailing" id="mYr-kd-qZm"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="SIV-e8-6lw">
@@ -244,7 +246,7 @@
                         <outlet property="faceImageView" destination="2gR-25-411" id="OFm-S9-Jbf"/>
                         <outlet property="genderImageView" destination="qXd-3a-lVD" id="sQU-Wp-THS"/>
                         <outlet property="locationButton" destination="D5d-NH-mkO" id="GM2-oa-Gmw"/>
-                        <outlet property="nameTextView" destination="9Uw-Zm-fov" id="Els-pW-Dwt"/>
+                        <outlet property="nameLabel" destination="djy-LV-PNl" id="ylK-E2-iag"/>
                         <outlet property="natLabel" destination="2XF-WK-ckH" id="fdD-gt-tz7"/>
                         <outlet property="phoneButton" destination="SYi-qE-aYV" id="Ge1-Qm-DmT"/>
                         <outlet property="registeredLabel" destination="1aV-QS-6iR" id="FSX-vG-Bt5"/>
