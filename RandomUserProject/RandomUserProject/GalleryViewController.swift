@@ -15,10 +15,11 @@ class GalleryViewController: UIViewController {
     var collectionArray : [User] = []
     weak var refreashControl : UIRefreshControl!
     var page : UInt = 0
+    var type : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "randomusergenerator"))
         
         let control = UIRefreshControl()
@@ -43,6 +44,7 @@ class GalleryViewController: UIViewController {
     
     func refresh(){
         
+        //type = UserDefaults.standard.string(forKey: "gender") ?? ""
         page = 0
         reload()
     }
@@ -68,7 +70,9 @@ class GalleryViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
-        APIManager.manager.getUsers(page: page, completion: completion)
+        //type = UserDefaults.standard.string(forKey: "gender") ?? ""
+        
+        APIManager.manager.getUsers(page: page, gender: type, completion: completion(_:_:))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -276,6 +276,9 @@
                                     <segment title="male"/>
                                     <segment title="all"/>
                                 </segments>
+                                <connections>
+                                    <action selector="genderSegmentetControlAction:" destination="54n-f7-uBf" eventType="valueChanged" id="xhn-YJ-Uf2"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
