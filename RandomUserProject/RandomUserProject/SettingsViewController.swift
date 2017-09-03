@@ -28,6 +28,8 @@ class SettingsViewController: UIViewController {
         }
         
         Settings.shared.gender = gender
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
 

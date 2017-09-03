@@ -10,6 +10,14 @@
 
 import Foundation
 
+extension Notification.Name{
+    static var genderSettingsChanged : Notification.Name{
+        get{
+            return Notification.Name(rawValue: "gender_settings_changed_notification")
+        }
+    }
+}
+
 class Settings{
     static var shared = Settings()
     
@@ -45,6 +53,8 @@ class Settings{
             let defaults = UserDefaults.standard
             defaults.setValue(newValue.rawValue, forKey: "gender")
             defaults.synchronize()
+            
+            NotificationCenter.default.post(name: .genderSettingsChanged, object: self)
         }
         get{
             let defaults = UserDefaults.standard

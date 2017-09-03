@@ -6,11 +6,14 @@
 //  Copyright © 2017 leah.eini. All rights reserved.
 //
 
+//  https://developer.apple.com/documentation/foundation/nsnotificationcenter
+// http://dev.iachieved.it/iachievedit/notifications-and-userinfo-with-swift-3-0/
+
 import UIKit
 import CCBottomRefreshControl
 
 class GalleryViewController: UIViewController {
-    
+        
     @IBOutlet weak var collectionView: UICollectionView!
     var collectionArray : [User] = []
     weak var refreshControl : UIRefreshControl!
@@ -18,6 +21,9 @@ class GalleryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: .genderSettingsChanged, object: nil)
+        
         
         navigationItem.title = "Users"
         
@@ -37,10 +43,6 @@ class GalleryViewController: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        //NotificationCenter.removeObserver(observer)
-    }
-    
     @IBAction func refreshBarButton(_ sender: UIBarButtonItem) {
         
         refresh()
@@ -53,6 +55,13 @@ class GalleryViewController: UIViewController {
     }
     
     func refresh(){
+        
+        guard Thread.isMainThread else{
+            DispatchQueue.main.async {
+                self.refresh()
+            }
+            return
+        }
         
         page = 0
         reload()
