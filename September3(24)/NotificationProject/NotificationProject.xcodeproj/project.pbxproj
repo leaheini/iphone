@@ -13,6 +13,7 @@
 		B2C047331F5691AB003CE0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C047321F5691AB003CE0A7 /* Assets.xcassets */; };
 		B2C047361F5691AC003CE0A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C047341F5691AC003CE0A7 /* LaunchScreen.storyboard */; };
 		B2C0473E1F56A156003CE0A7 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2C0473D1F56A156003CE0A7 /* sound.wav */; };
+		B2C047AA1F5BFB87003CE0A7 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B2C047A81F5BFB7C003CE0A7 /* video.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		B2C047351F5691AC003CE0A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2C047371F5691AC003CE0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C0473D1F56A156003CE0A7 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
+		B2C047A71F5BE179003CE0A7 /* NotificationProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationProject.entitlements; sourceTree = "<group>"; };
+		B2C047A81F5BFB7C003CE0A7 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,23 +59,25 @@
 		B2C0472A1F5691AB003CE0A7 /* NotificationProject */ = {
 			isa = PBXGroup;
 			children = (
+				B2C047A71F5BE179003CE0A7 /* NotificationProject.entitlements */,
 				B2C0472B1F5691AB003CE0A7 /* AppDelegate.swift */,
 				B2C0472D1F5691AB003CE0A7 /* ViewController.swift */,
 				B2C0472F1F5691AB003CE0A7 /* Main.storyboard */,
 				B2C047321F5691AB003CE0A7 /* Assets.xcassets */,
 				B2C047341F5691AC003CE0A7 /* LaunchScreen.storyboard */,
 				B2C047371F5691AC003CE0A7 /* Info.plist */,
-				B2C0473F1F56A15B003CE0A7 /* sounds */,
+				B2C0473F1F56A15B003CE0A7 /* resources */,
 			);
 			path = NotificationProject;
 			sourceTree = "<group>";
 		};
-		B2C0473F1F56A15B003CE0A7 /* sounds */ = {
+		B2C0473F1F56A15B003CE0A7 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				B2C047A81F5BFB7C003CE0A7 /* video.mp4 */,
 				B2C0473D1F56A156003CE0A7 /* sound.wav */,
 			);
-			name = sounds;
+			name = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,7 +112,16 @@
 				TargetAttributes = {
 					B2C047271F5691AB003CE0A7 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = J7YZTH9Z4F;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C047361F5691AC003CE0A7 /* LaunchScreen.storyboard in Resources */,
+				B2C047AA1F5BFB87003CE0A7 /* video.mp4 in Resources */,
 				B2C047331F5691AB003CE0A7 /* Assets.xcassets in Resources */,
 				B2C0473E1F56A156003CE0A7 /* sound.wav in Resources */,
 				B2C047311F5691AB003CE0A7 /* Main.storyboard in Resources */,
@@ -272,10 +287,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NotificationProject/NotificationProject.entitlements;
+				DEVELOPMENT_TEAM = J7YZTH9Z4F;
 				INFOPLIST_FILE = NotificationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackeru.NotificationProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomer.app1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -285,10 +302,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NotificationProject/NotificationProject.entitlements;
+				DEVELOPMENT_TEAM = J7YZTH9Z4F;
 				INFOPLIST_FILE = NotificationProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackeru.NotificationProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomer.app1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -313,6 +332,7 @@
 				B2C0473C1F5691AC003CE0A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
