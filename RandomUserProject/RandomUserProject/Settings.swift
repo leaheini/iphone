@@ -6,6 +6,8 @@
 //  Copyright © 2017 leah.eini. All rights reserved.
 //
 
+// https://developer.apple.com/documentation/foundation/userdefaults
+
 import Foundation
 
 class Settings{
