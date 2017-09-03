@@ -13,7 +13,7 @@ class GalleryViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var collectionArray : [User] = []
-    weak var refreashControl : UIRefreshControl!
+    weak var refreshControl : UIRefreshControl!
     var page : UInt = 0
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class GalleryViewController: UIViewController {
         let control = UIRefreshControl()
         control.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.addSubview(control)
-        self.refreashControl = control
+        self.refreshControl = control
         
         let bottomControl = UIRefreshControl()
         bottomControl.addTarget(self, action: #selector(loadNextPage), for: .valueChanged)
@@ -35,6 +35,15 @@ class GalleryViewController: UIViewController {
         
         refresh()
         
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        //NotificationCenter.removeObserver(observer)
+    }
+    
+    @IBAction func refreshBarButton(_ sender: UIBarButtonItem) {
+        
+        refresh()
     }
     
     func loadNextPage(){
@@ -52,7 +61,7 @@ class GalleryViewController: UIViewController {
     func reload(){
         
         func completion(_ arr : [User]?, _ err : Error?){
-            self.refreashControl.endRefreshing()
+            self.refreshControl.endRefreshing()
             self.collectionView.bottomRefreshControl?.endRefreshing()
             
             guard let arr = arr else {

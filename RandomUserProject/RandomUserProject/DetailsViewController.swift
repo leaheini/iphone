@@ -31,6 +31,8 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = user.fullName
+
         faceImageView.image = nil
         if let url = user.picture?.large{
             faceImageView.sd_setImage(with: url)
@@ -69,12 +71,15 @@ class DetailsViewController: UIViewController {
         }
         
         locationButton.setTitle(user.location, for: .normal)
+        locationButton.titleLabel?.numberOfLines = 0
+        
         emailButton.setTitle(user.email, for: .normal)
         phoneButton.setTitle(user.phone, for: .normal)
         cellButton.setTitle(user.cell, for: .normal)
         natLabel.text = "National: " + user.nat
         
     }
+    
 
     @IBAction func locationAction(_ sender: UIButton) {
         let escapedAddress = user.location.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -84,6 +89,7 @@ class DetailsViewController: UIViewController {
         }
         
         guard UIApplication.shared.canOpenURL(url) else{
+            // todo taost
             print("waze not installed")
             return
         }

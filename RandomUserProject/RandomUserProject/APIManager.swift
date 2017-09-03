@@ -19,8 +19,7 @@ class APIManager: NSObject {
     
     private func sendGetRequest(params : JSON, completion : @escaping DictionaryResultCompletion){
         
-        
-        Alamofire.request(baseURL, method: .get, parameters:params).responseJSON { (dataRes) in
+        Alamofire.request(baseURL, method: .get, parameters: params).responseJSON { (dataRes) in
             
             guard let json = dataRes.result.value as? JSON else{
                 //notify about an error
