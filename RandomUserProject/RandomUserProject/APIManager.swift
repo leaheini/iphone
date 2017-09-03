@@ -34,12 +34,16 @@ class APIManager: NSObject {
         }
     }
     
-    func getUsers(page : UInt, gender : String, completion : @escaping ([User]?, Error?)->Void){
+    func getUsers(page : UInt, completion : @escaping ([User]?, Error?)->Void){
         
         var params : JSON = [:]
         params["page"] = page
         params["results"] = 25
-        params["gender"] = gender
+        
+        let gender = Settings.shared.gender
+        if gender.shouldSend{
+            params["gender"] = gender.stringVal
+        }
         
         sendGetRequest(params : params) { (jsonArr, err) in
             let arr = jsonArr?.flatMap{ User($0) }

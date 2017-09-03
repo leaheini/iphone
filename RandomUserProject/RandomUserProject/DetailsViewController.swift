@@ -77,7 +77,25 @@ class DetailsViewController: UIViewController {
     }
 
     @IBAction func locationAction(_ sender: UIButton) {
-        let geoCoder = CLGeocoder()
+        let escapedAddress = user.location.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        let urlString = "waze://?q=\(escapedAddress)&navigate=yes"
+        guard let url = URL(string: urlString) else{
+            return
+        }
+        
+        guard UIApplication.shared.canOpenURL(url) else{
+            print("waze not installed")
+            return
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+        
+        /*let geoCoder = CLGeocoder()
+        
         geoCoder.geocodeAddressString(user.location) { (placemarks, error) in
             guard
                 let placemarks = placemarks,
@@ -105,7 +123,7 @@ class DetailsViewController: UIViewController {
             } else {
                 UIApplication.shared.openURL(url)
             }
-        }
+        }*/
     }
    
     func dialANumber(_ sender: UIButton){
@@ -137,15 +155,23 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController : MFMailComposeViewControllerDelegate{
     
     @IBAction func emailAction(_ sender: UIButton) {
-        if MFMailComposeViewController.canSendMail() {
-            let mailComposeViewController = configuredMailComposeViewController()
-            self.present(mailComposeViewController, animated: true, completion: nil)
-        } else {
-            self.showSendMailErrorAlert(with: "Your device could not send e-mail.  Please check e-mail configuration and try again.")
+        
+        configuredMailComposeViewController { (controller) in
+            guard let controller = controller else{
+                return
+            }
+            
+            self.present(controller, animated: true, completion: nil)
         }
+        
     }
     
-    func configuredMailComposeViewController() -> MFMailComposeViewController {
+    func configuredMailComposeViewController(_ callback : @escaping (MFMailComposeViewController?)->Void) {
+        guard MFMailComposeViewController.canSendMail() else{
+            callback(nil)
+            return
+        }
+        
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
         
@@ -158,6 +184,8 @@ extension DetailsViewController : MFMailComposeViewControllerDelegate{
             }
             mailComposerVC.setSubject(subject)
             mailComposerVC.setMessageBody(body, isHTML: false)
+            
+            callback(mailComposerVC)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -177,10 +205,10 @@ extension DetailsViewController : MFMailComposeViewControllerDelegate{
         if user.email.isValidEmail{
             mailComposerVC.setToRecipients([user.email])
         } else {
+            callback(nil)
             showSendMailErrorAlert(with: "Email is not valid")
         }
         
-        return mailComposerVC
     }
     
     
@@ -201,36 +229,41 @@ extension DetailsViewController : MFMailComposeViewControllerDelegate{
 extension DetailsViewController : MFMessageComposeViewControllerDelegate {
     
     func sendSMS(){
-        if MFMessageComposeViewController.canSendText(){
-            let msgVC = MFMessageComposeViewController()
-            
-            let smsTextAlert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-            
-            smsTextAlert.addAction(UIAlertAction(title: "Type your message", style: .default, handler: { (_) in
-                guard let smsText = smsTextAlert.textFields?.first?.text else{
-                    return
-                }
-                msgVC.body = smsText
-            }))
-            
-            smsTextAlert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: nil))
-            
-            smsTextAlert.addTextField{
-                $0.placeholder = "Type your sms message"
-            }
-            
-            self.present(smsTextAlert, animated: true, completion: nil)
-            
-            msgVC.recipients = [self.user.cell]
-            msgVC.messageComposeDelegate = self
-            self.present(msgVC, animated: true, completion: nil)
-        } else {
+        guard MFMessageComposeViewController.canSendText() else {
             let alert = UIAlertController(title: "Could not send sms", message: "Your device could not send sms", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
             
             self.present(alert, animated: true, completion: nil)
+            
+            return
         }
+        
+        let msgVC = MFMessageComposeViewController()
+        
+        let smsTextAlert = UIAlertController(title: "Type your message", message: nil, preferredStyle: .alert)
+        
+        smsTextAlert.addAction(UIAlertAction(title: "Send", style: .default, handler: { (_) in
+            guard let smsText = smsTextAlert.textFields?.first?.text else{
+                return
+            }
+            msgVC.body = smsText
+            
+            self.present(msgVC, animated: true, completion: nil)
+        }))
+        
+        smsTextAlert.addAction(UIAlertAction(title: "Dismiss", style: .destructive, handler: nil))
+        
+        smsTextAlert.addTextField{
+            $0.placeholder = "Type your sms message"
+        }
+        
+        self.present(smsTextAlert, animated: true, completion: nil)
+        
+        msgVC.recipients = [self.user.cell]
+        msgVC.messageComposeDelegate = self
+        
+        
     }
     
     @IBAction func cellAction(_ sender: UIButton) {

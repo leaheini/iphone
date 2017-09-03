@@ -14,45 +14,24 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    enum ConvertType : Int{
-        case female  //0
-        case male  //1
-        case all  //2     //*** wont get all only ""
-        
-        static let count = 2
-        
-    }
-
-    var type : ConvertType = .all
     
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        genderSegmentetControlAction(genderSegmentedControl)
+        navigationItem.title = "Settings"
         
+        genderSegmentedControl.selectedSegmentIndex = Settings.shared.gender.rawValue
     }
 
     @IBAction func genderSegmentetControlAction(_ sender: UISegmentedControl) {
         
-        let index : Int = sender.selectedSegmentIndex
-        guard let t = ConvertType(rawValue: index) else {
-            // todo taost
-            print("unsupported index \(index)")
+        guard let gender = Settings.Gender(rawValue: sender.selectedSegmentIndex) else{
             return
         }
         
-        self.type = t
-        
-        /*
-        UserDefaults.standard.register(defaults: [
-            "gender": type
-            ])
- */
-        
-        //GalleryViewController.reload()
-        //APIManager.manager.getUsers(page: page, gender: type, completion: completion)
+        Settings.shared.gender = gender
     }
     
 
