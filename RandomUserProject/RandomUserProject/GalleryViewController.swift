@@ -27,7 +27,7 @@ class GalleryViewController: UIViewController {
         
         navigationItem.title = "Users"
         
-        //collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "randomusergenerator"))
+        //collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "purple_background"))
         
         let control = UIRefreshControl()
         control.addTarget(self, action: #selector(refresh), for: .valueChanged)

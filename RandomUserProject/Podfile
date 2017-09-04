@@ -11,5 +11,4 @@ pod 'Alamofire'
 pod 'SDWebImage'
 pod 'CCBottomRefreshControl'
 
-
 end
