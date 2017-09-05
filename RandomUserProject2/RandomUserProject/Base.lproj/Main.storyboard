@@ -108,11 +108,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="gES-Dt-BCS">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="HSX-oq-YAF">
+                            <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="refreshBarButton:" destination="dFw-7o-dbR" id="6q1-IJ-hsM"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icons8-settings_filled" id="Qso-Jb-b9J">
+                            <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="54n-f7-uBf" kind="show" id="aem-VR-Ic5"/>
                             </connections>
@@ -157,7 +159,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leah Eini" textAlignment="center" lineBreakMode="clip" numberOfLines="2" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djy-LV-PNl">
                                         <rect key="frame" x="40" y="0.0" width="192" height="35"/>
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -177,52 +179,67 @@
                                     <constraint firstItem="qXd-3a-lVD" firstAttribute="leading" secondItem="djy-LV-PNl" secondAttribute="trailing" id="mYr-kd-qZm"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="SIV-e8-6lw">
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIV-e8-6lw">
                                 <rect key="frame" x="32" y="282" width="311" height="360"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="dob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1B7-Qd-glb" userLabel="dob">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="28" height="54"/>
+                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5d-NH-mkO" userLabel="location">
-                                        <rect key="frame" x="0.0" y="56.5" width="55" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="51" width="58" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="location"/>
                                         <connections>
                                             <action selector="locationAction:" destination="xq7-C7-xKx" eventType="touchUpInside" id="vFB-uU-Jr2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzv-dT-MWP">
-                                        <rect key="frame" x="0.0" y="113" width="37" height="21.5"/>
-                                        <state key="normal" title="email"/>
+                                        <rect key="frame" x="0.0" y="102" width="39" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="email">
+                                            <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="emailAction:" destination="xq7-C7-xKx" eventType="touchUpInside" id="eM3-ZA-4tQ"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="member since" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aV-QS-6iR">
-                                        <rect key="frame" x="0.0" y="169.5" width="108.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="153" width="101" height="54"/>
+                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYi-qE-aYV">
-                                        <rect key="frame" x="0.0" y="225.5" width="44" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="204" width="45" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="phone"/>
                                         <connections>
                                             <action selector="callAction:" destination="xq7-C7-xKx" eventType="touchUpInside" id="u9y-tX-knz"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qi-WP-Z6a">
-                                        <rect key="frame" x="0.0" y="282" width="30" height="21.5"/>
-                                        <state key="normal" title="cell"/>
+                                        <rect key="frame" x="0.0" y="255" width="30" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="cell">
+                                            <color key="titleColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cellAction:" destination="xq7-C7-xKx" eventType="touchUpInside" id="gk5-B5-ARt"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="national" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XF-WK-ckH">
-                                        <rect key="frame" x="0.0" y="338.5" width="60.5" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="306" width="57.5" height="54"/>
+                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -274,29 +291,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xJj-D5-PMI">
-                                <rect key="frame" x="16" y="109" width="343" height="29"/>
+                                <rect key="frame" x="16" y="113" width="343" height="29"/>
                                 <segments>
                                     <segment title="female"/>
                                     <segment title="male"/>
                                     <segment title="all"/>
                                 </segments>
+                                <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="genderSegmentetControlAction:" destination="54n-f7-uBf" eventType="valueChanged" id="xhn-YJ-Uf2"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYW-Az-30I">
-                                <rect key="frame" x="16" y="80" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYW-Az-30I">
+                                <rect key="frame" x="144" y="80" width="88" height="17"/>
+                                <color key="tintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xJj-D5-PMI" firstAttribute="leading" secondItem="P9T-Ge-opl" secondAttribute="leading" constant="16" id="6CT-E5-DUT"/>
                             <constraint firstItem="LYW-Az-30I" firstAttribute="top" secondItem="wGO-QI-Vac" secondAttribute="bottom" constant="16" id="8sZ-p6-bIU"/>
-                            <constraint firstItem="LYW-Az-30I" firstAttribute="leading" secondItem="P9T-Ge-opl" secondAttribute="leading" constant="16" id="B7G-gj-2OT"/>
-                            <constraint firstItem="xJj-D5-PMI" firstAttribute="top" secondItem="LYW-Az-30I" secondAttribute="bottom" constant="8" id="LZM-RZ-phd"/>
-                            <constraint firstItem="xJj-D5-PMI" firstAttribute="leading" secondItem="LYW-Az-30I" secondAttribute="leading" id="ft8-aa-fud"/>
+                            <constraint firstItem="xJj-D5-PMI" firstAttribute="top" secondItem="LYW-Az-30I" secondAttribute="bottom" constant="16" id="LZM-RZ-phd"/>
+                            <constraint firstItem="LYW-Az-30I" firstAttribute="centerX" secondItem="P9T-Ge-opl" secondAttribute="centerX" id="TUO-OE-QQf"/>
                             <constraint firstAttribute="trailing" secondItem="xJj-D5-PMI" secondAttribute="trailing" constant="16" id="nph-O7-QMC"/>
                         </constraints>
                     </view>

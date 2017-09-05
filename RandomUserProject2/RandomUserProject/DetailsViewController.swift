@@ -73,15 +73,18 @@ class DetailsViewController: UIViewController {
             registeredLabel.text = "No date of registered"
         }
         
-        locationButton.setTitle(user.location, for: .normal)
+        locationButton.setTitle("Address: " + user.location, for: .normal)
         locationButton.titleLabel?.numberOfLines = 0
         
-        emailButton.setTitle(user.email, for: .normal)
-        phoneButton.setTitle(user.phone, for: .normal)
-        cellButton.setTitle(user.cell, for: .normal)
+        emailButton.setTitle("Email: " + user.email, for: .normal)
+        emailButton.titleLabel?.numberOfLines = 0
+
+        phoneButton.setTitle("Tel: " + user.phone, for: .normal)
+        cellButton.setTitle("Cell: " + user.cell, for: .normal)
         natLabel.text = "National: " + user.nat
         
     }
+    
     
 
     @IBAction func locationAction(_ sender: UIButton) {
@@ -192,7 +195,6 @@ extension DetailsViewController : MFMailComposeViewControllerDelegate{
         }
         
     }
-    
     
     func showSendMailErrorAlert(with error : String) {
         let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: error, preferredStyle: .alert)
