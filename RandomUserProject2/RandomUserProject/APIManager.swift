@@ -46,6 +46,8 @@ class APIManager: NSObject {
             params["gender"] = gender.stringVal
         }
         
+        params["nat"] = Settings.shared.nat    //*******
+        
         sendGetRequest(params : params) { (jsonArr, err) in
             let arr = jsonArr?.flatMap{ User($0) }
             completion(arr, err)

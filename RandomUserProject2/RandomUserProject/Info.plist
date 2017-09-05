@@ -37,6 +37,8 @@
 	<array>
 		<string>waze</string>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Adding dob event to calendar</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

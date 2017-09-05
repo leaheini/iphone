@@ -182,13 +182,16 @@
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIV-e8-6lw">
                                 <rect key="frame" x="32" y="282" width="311" height="360"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="dob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1B7-Qd-glb" userLabel="dob">
-                                        <rect key="frame" x="0.0" y="0.0" width="28" height="54"/>
-                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg8-8r-xOt">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="54"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="dob">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addBdateEventToCalendar:" destination="xq7-C7-xKx" eventType="touchUpInside" id="qCh-PT-wIf"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5d-NH-mkO" userLabel="location">
                                         <rect key="frame" x="0.0" y="51" width="58" height="54"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -263,7 +266,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="D0Z-q8-yaa" id="d76-QP-YtT"/>
                         <outlet property="cellButton" destination="6qi-WP-Z6a" id="QBL-W9-MBc"/>
-                        <outlet property="dobLabel" destination="1B7-Qd-glb" id="6Yx-FF-G02"/>
+                        <outlet property="dobButton" destination="rg8-8r-xOt" id="75w-On-rdj"/>
                         <outlet property="emailButton" destination="tzv-dT-MWP" id="bJ5-6W-Qs7"/>
                         <outlet property="faceImageView" destination="2gR-25-411" id="OFm-S9-Jbf"/>
                         <outlet property="genderImageView" destination="qXd-3a-lVD" id="sQU-Wp-THS"/>
@@ -309,18 +312,38 @@
                                 <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="National Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGX-zK-EfX">
+                                <rect key="frame" x="137.5" y="227" width="101.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRZ-ob-6V6">
+                                <rect key="frame" x="0.0" y="260" width="375" height="216"/>
+                                <color key="tintColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="54n-f7-uBf" id="4TC-9K-jF2"/>
+                                    <outlet property="delegate" destination="54n-f7-uBf" id="idw-1O-vgQ"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xJj-D5-PMI" firstAttribute="leading" secondItem="P9T-Ge-opl" secondAttribute="leading" constant="16" id="6CT-E5-DUT"/>
                             <constraint firstItem="LYW-Az-30I" firstAttribute="top" secondItem="wGO-QI-Vac" secondAttribute="bottom" constant="16" id="8sZ-p6-bIU"/>
+                            <constraint firstItem="KRZ-ob-6V6" firstAttribute="leading" secondItem="P9T-Ge-opl" secondAttribute="leading" id="GxV-0c-w3Q"/>
                             <constraint firstItem="xJj-D5-PMI" firstAttribute="top" secondItem="LYW-Az-30I" secondAttribute="bottom" constant="16" id="LZM-RZ-phd"/>
+                            <constraint firstAttribute="trailing" secondItem="KRZ-ob-6V6" secondAttribute="trailing" id="PuC-6y-pYr"/>
                             <constraint firstItem="LYW-Az-30I" firstAttribute="centerX" secondItem="P9T-Ge-opl" secondAttribute="centerX" id="TUO-OE-QQf"/>
+                            <constraint firstItem="MGX-zK-EfX" firstAttribute="top" secondItem="xJj-D5-PMI" secondAttribute="bottom" constant="86" id="Xkn-4v-LjV"/>
+                            <constraint firstItem="MGX-zK-EfX" firstAttribute="centerX" secondItem="LYW-Az-30I" secondAttribute="centerX" id="anQ-ea-bDs"/>
                             <constraint firstAttribute="trailing" secondItem="xJj-D5-PMI" secondAttribute="trailing" constant="16" id="nph-O7-QMC"/>
+                            <constraint firstItem="KRZ-ob-6V6" firstAttribute="top" secondItem="MGX-zK-EfX" secondAttribute="bottom" constant="16" id="ubs-q2-cce"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="genderSegmentedControl" destination="xJj-D5-PMI" id="qDs-6I-TSC"/>
+                        <outlet property="nationalPicker" destination="KRZ-ob-6V6" id="GMg-UO-v8b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnZ-Zf-Xvd" userLabel="First Responder" sceneMemberID="firstResponder"/>

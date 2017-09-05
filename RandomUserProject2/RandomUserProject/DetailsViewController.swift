@@ -13,6 +13,7 @@ import SDWebImage
 import CoreLocation
 import MessageUI
 import Toaster
+import EventKit
 
 class DetailsViewController: UIViewController {
     
@@ -21,7 +22,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet var genderImageView: UIImageView!
     
-    @IBOutlet var dobLabel: UILabel!
+    @IBOutlet weak var dobButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
     @IBOutlet var registeredLabel: UILabel!
@@ -62,9 +63,9 @@ class DetailsViewController: UIViewController {
         }
         
         if let dob = user.dob?.toString{
-            dobLabel.text = "Date of birth: " + dob
+            dobButton.setTitle("Date of birth: " + dob, for: .normal)
         } else {
-            dobLabel.text = "No date of birth"
+            dobButton.setTitle("No date of birth", for: .normal)
         }
         
         if let registered = user.registered?.toString{
@@ -86,6 +87,30 @@ class DetailsViewController: UIViewController {
     }
     
     
+    @IBAction func addBdateEventToCalendar(_ sender: UIButton) {
+        let store = EKEventStore()
+        store.requestAccess(to: .event) {(granted, error) in
+            if !granted {
+                Toast(text: "Failed to save event with error : \(String(describing: error)) or access not granted", duration: Delay.long).show()
+                return
+            }
+            let event = EKEvent(eventStore: store)
+            guard let dob = self.user.dob else {
+                Toast(text: "No date of birth", duration: Delay.long).show()
+                return
+            }
+            event.title = self.user.fullName + "'s Birthday"
+            event.startDate = dob
+            event.endDate = dob
+            event.calendar = store.defaultCalendarForNewEvents
+            do {
+                try store.save(event, span: .thisEvent, commit: true)
+                Toast(text: "Saved Event", duration: Delay.long).show()
+            } catch {
+                Toast(text: "Failed to save event with error : \(error)", duration: Delay.long).show()
+            }
+        }
+    }
 
     @IBAction func locationAction(_ sender: UIButton) {
         let escapedAddress = user.location.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

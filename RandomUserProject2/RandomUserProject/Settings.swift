@@ -16,6 +16,12 @@ extension Notification.Name{
             return Notification.Name(rawValue: "gender_settings_changed_notification")
         }
     }
+    
+    static var nationalSettingsChanged : Notification.Name{
+        get{
+            return Notification.Name(rawValue: "national_settings_changed_notification")
+        }
+    }
 }
 
 class Settings{
@@ -46,6 +52,7 @@ class Settings{
                 }
             }
         }
+        
     }
     
     
@@ -67,5 +74,22 @@ class Settings{
             
         }
     }
+    
+    
+    var nat : Int{
+        set{
+            let defaults = UserDefaults.standard
+            defaults.setValue(???, forKey: "nat")  //*********
+            defaults.synchronize()
+            
+            NotificationCenter.default.post(name: .nationalSettingsChanged, object: self)
+        }
+        get{
+            let defaults = UserDefaults.standard
+            return nat //*************
+            
+        }
+    }
+
     
 }
