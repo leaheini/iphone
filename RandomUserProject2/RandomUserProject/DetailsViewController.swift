@@ -29,6 +29,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var cellButton: UIButton!
     @IBOutlet var natLabel: UILabel!
+    @IBOutlet weak var natFlagImage: UIImageView!
     
     var user : User!
     
@@ -84,6 +85,7 @@ class DetailsViewController: UIViewController {
         cellButton.setTitle("Cell: " + user.cell, for: .normal)
         if let nat = Settings.shared.nationallityFor(code: user.nat){
             natLabel.text = "Nationality: " + nat.name
+            natFlagImage.image = UIImage(named: user.nat.lowercased())
         } else {
             natLabel.text = "No nationality"
         }

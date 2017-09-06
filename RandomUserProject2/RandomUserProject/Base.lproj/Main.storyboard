@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="18F-O4-2ZD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="18F-O4-2ZD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UYz-Rf-TIY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="f4g-g5-vds">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -239,17 +239,29 @@
                                             <action selector="cellAction:" destination="xq7-C7-xKx" eventType="touchUpInside" id="gk5-B5-ARt"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="national" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XF-WK-ckH">
-                                        <rect key="frame" x="0.0" y="306" width="57.5" height="54"/>
-                                        <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" distribution="equalCentering" spacing="16" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4f-Vd-HOX">
+                                        <rect key="frame" x="0.0" y="306" width="131" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="national" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XF-WK-ckH">
+                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="54"/>
+                                                <color key="tintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LY2-0Z-UHa">
+                                                <rect key="frame" x="73.5" y="0.0" width="57.5" height="54"/>
+                                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="LY2-0Z-UHa" firstAttribute="height" secondItem="2XF-WK-ckH" secondAttribute="height" id="feA-nS-EYb"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2gR-25-411" firstAttribute="leading" secondItem="2w2-aB-HUr" secondAttribute="leadingMargin" constant="35" id="1BH-TB-gmD"/>
                             <constraint firstItem="9HT-jT-2la" firstAttribute="top" secondItem="2gR-25-411" secondAttribute="bottom" constant="1" id="B3Z-mQ-2cZ"/>
@@ -272,6 +284,7 @@
                         <outlet property="genderImageView" destination="qXd-3a-lVD" id="sQU-Wp-THS"/>
                         <outlet property="locationButton" destination="D5d-NH-mkO" id="GM2-oa-Gmw"/>
                         <outlet property="nameLabel" destination="djy-LV-PNl" id="ylK-E2-iag"/>
+                        <outlet property="natFlagImage" destination="LY2-0Z-UHa" id="y7t-4l-hbg"/>
                         <outlet property="natLabel" destination="2XF-WK-ckH" id="fdD-gt-tz7"/>
                         <outlet property="phoneButton" destination="SYi-qE-aYV" id="Ge1-Qm-DmT"/>
                         <outlet property="registeredLabel" destination="1aV-QS-6iR" id="FSX-vG-Bt5"/>
@@ -306,14 +319,14 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYW-Az-30I">
-                                <rect key="frame" x="144" y="80" width="88" height="17"/>
+                                <rect key="frame" x="143.5" y="80" width="88" height="17"/>
                                 <color key="tintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="National Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGX-zK-EfX">
-                                <rect key="frame" x="137.5" y="227" width="101.5" height="17"/>
+                                <rect key="frame" x="137" y="227" width="101.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -327,7 +340,7 @@
                                 </connections>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xJj-D5-PMI" firstAttribute="leading" secondItem="P9T-Ge-opl" secondAttribute="leading" constant="16" id="6CT-E5-DUT"/>
                             <constraint firstItem="LYW-Az-30I" firstAttribute="top" secondItem="wGO-QI-Vac" secondAttribute="bottom" constant="16" id="8sZ-p6-bIU"/>
