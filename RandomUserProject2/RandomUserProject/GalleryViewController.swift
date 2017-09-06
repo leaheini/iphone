@@ -24,6 +24,7 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: .genderSettingsChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: .nationalSettingsChanged, object: nil)
         
         //collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "purple_background"))
         

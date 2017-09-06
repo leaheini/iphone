@@ -82,7 +82,11 @@ class DetailsViewController: UIViewController {
 
         phoneButton.setTitle("Tel: " + user.phone, for: .normal)
         cellButton.setTitle("Cell: " + user.cell, for: .normal)
-        natLabel.text = "National: " + user.nat
+        if let nat = Settings.shared.nationallityFor(code: user.nat){
+            natLabel.text = "Nationality: " + nat.name
+        } else {
+            natLabel.text = "No nationality"
+        }
         
     }
     

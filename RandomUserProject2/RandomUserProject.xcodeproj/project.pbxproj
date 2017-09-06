@@ -11,6 +11,7 @@
 		5BB151721F588A9200DCBE09 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB151711F588A9200DCBE09 /* MessageUI.framework */; };
 		6D29B4E11F56C6C100AC0178 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D29B4E01F56C6C100AC0178 /* DetailsViewController.swift */; };
 		6D29B4E31F56C6D700AC0178 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D29B4E21F56C6D700AC0178 /* SettingsViewController.swift */; };
+		6D6E23EF1F5FE41900573A4C /* nat.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D6E23EE1F5FE41900573A4C /* nat.plist */; };
 		6D9B199A1F56FA3700A02CE1 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9B19991F56FA3700A02CE1 /* Utils.swift */; };
 		6DBEE5BF1F52E762002CEC65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEE5BE1F52E762002CEC65 /* AppDelegate.swift */; };
 		6DBEE5C41F52E762002CEC65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEE5C21F52E762002CEC65 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		5BB151711F588A9200DCBE09 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6D29B4E01F56C6C100AC0178 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		6D29B4E21F56C6D700AC0178 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6D6E23EE1F5FE41900573A4C /* nat.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nat.plist; sourceTree = "<group>"; };
 		6D9B19991F56FA3700A02CE1 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		6DBEE5BB1F52E762002CEC65 /* RandomUserProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUserProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBEE5BE1F52E762002CEC65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				6DBEE5D61F52FBEF002CEC65 /* User.swift */,
 				6D9B19991F56FA3700A02CE1 /* Utils.swift */,
 				B2C047AB1F5C11A7003CE0A7 /* Settings.swift */,
+				6D6E23EE1F5FE41900573A4C /* nat.plist */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				6DBEE5C91F52E762002CEC65 /* LaunchScreen.storyboard in Resources */,
 				6DBEE5C61F52E762002CEC65 /* Assets.xcassets in Resources */,
+				6D6E23EF1F5FE41900573A4C /* nat.plist in Resources */,
 				6DBEE5C41F52E762002CEC65 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

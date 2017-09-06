@@ -6,7 +6,8 @@
 //  Copyright © 2017 leah.eini. All rights reserved.
 //
 
-// https://developer.apple.com/documentation/foundation/userdefaults
+// https://developer.apple.com/documentation/foundation/userdefaults  //save data
+// https://gist.github.com/keeguon/2310008  // nationalities
 
 import Foundation
 
@@ -26,6 +27,36 @@ extension Notification.Name{
 
 class Settings{
     static var shared = Settings()
+    
+    struct Nationality {
+        let name : String
+        let code : String
+        
+        init?(_ dict : [String:Any]) {
+            guard let name = dict["name"] as? String,
+                let code = dict["code"] as? String else{
+                    return nil
+            }
+            self.name = name
+            self.code = code
+        }
+    }
+    
+    let allNationalities : [Nationality]
+    
+    init() {
+        
+        if let path = Bundle.main.path(forResource: "nat", ofType: "plist"),   // Internal file of all nationalities
+            let arr = NSArray(contentsOfFile: path),
+            let dictArr = arr as? [[String:Any]]{
+            
+            self.allNationalities = dictArr.flatMap{ Nationality($0) }
+            
+        } else {
+            self.allNationalities = []
+        }
+        
+    }
     
     enum Gender : Int{
         case female
@@ -76,20 +107,29 @@ class Settings{
     }
     
     
-    var nat : Int{
+    var natCode : String?{  //*********
         set{
             let defaults = UserDefaults.standard
-            defaults.setValue(???, forKey: "nat")  //*********
+            defaults.setValue(newValue, forKey: "nat")
             defaults.synchronize()
             
             NotificationCenter.default.post(name: .nationalSettingsChanged, object: self)
         }
         get{
             let defaults = UserDefaults.standard
-            return nat //*************
-            
+            guard let stringVal = defaults.value(forKey: "nat") as? String else{
+                return nil
+            }
+            return stringVal
         }
     }
 
+    func nationallityFor(code : String) -> Nationality?{
+        
+        return allNationalities.first(where: {
+            $0.code == code
+        })
+        
+    }
     
 }

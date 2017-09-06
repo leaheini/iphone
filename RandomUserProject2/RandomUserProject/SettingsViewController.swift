@@ -13,33 +13,27 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var nationalPicker: UIPickerView!
+   
+    var pickerArray : [Settings.Nationality] {
+        get{
+            return Settings.shared.allNationalities
+        }
+    }
     
-    let natArr : [String] = [
-        "AU",
-        "BR",
-        "CA",
-        "CH",
-        "DE",
-        "DK",
-        "ES",
-        "FI",
-        "FR",
-        "GB",
-        "IE",
-        "IR",
-        "NL",
-        "NZ",
-        "TR",
-        "US"
-    ]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Settings"
         
         genderSegmentedControl.selectedSegmentIndex = Settings.shared.gender.rawValue
-        nationalPicker.selectedRow(inComponent: 1) = Settings.nat
+        
+        if let code = Settings.shared.natCode,
+            let index = pickerArray.index(where: { $0.code == code}){
+            
+            let intIndex = Int(index)
+            nationalPicker.selectRow(intIndex, inComponent: 0, animated: false)
+        }
+
     }
 
     @IBAction func genderSegmentetControlAction(_ sender: UISegmentedControl) {
@@ -59,13 +53,14 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return natArr.count   //number of rows
+        return pickerArray.count   //number of rows
     }
     
     // instead of next paragraph titleForRow
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let text = natArr[row]
-        let color : UIColor = (row % 2 == 0) ? .purple : .blue  // double purple, odd blue
+        let nat = pickerArray[row]
+        let text = nat.name
+        let color : UIColor = (row % 2 == 0) ? .red : .blue  // double red, odd blue
         
         //return NSAttributedString(string: text, attributes: [NSFontAttributeName : color])
         
@@ -78,13 +73,10 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
-        guard let nat = Settings.nat(row) else{
-            return
-        }
+        let nat = pickerArray[row]
         
-        Settings.shared.nat = nat
+        Settings.shared.natCode = nat.code
         
-        self.navigationController?.popViewController(animated: true)
     }
     
     /*

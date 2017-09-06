@@ -6,6 +6,8 @@
 //  Copyright © 2017 leah.eini. All rights reserved.
 //
 
+//https://randomuser.me/
+
 import UIKit
 import Alamofire
 import Toaster
@@ -46,7 +48,9 @@ class APIManager: NSObject {
             params["gender"] = gender.stringVal
         }
         
-        params["nat"] = Settings.shared.nat    //*******
+        if let code = Settings.shared.natCode, !code.isEmpty{   //******
+            params["nat"] = code
+        }
         
         sendGetRequest(params : params) { (jsonArr, err) in
             let arr = jsonArr?.flatMap{ User($0) }

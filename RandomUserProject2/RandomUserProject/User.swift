@@ -8,9 +8,6 @@
 
 import UIKit
 
-//https://randomuser.me/
-
-
 class User: NSObject {
     
     class Picture{
