@@ -60,7 +60,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let nat = pickerArray[row]
         let text = nat.name
-        let color : UIColor = (row % 2 == 0) ? .red : .blue  // double red, odd blue
+        let color : UIColor = (row % 2 == 0) ? .purple : .blue  // double purple, odd blue
         
         //return NSAttributedString(string: text, attributes: [NSFontAttributeName : color])
         

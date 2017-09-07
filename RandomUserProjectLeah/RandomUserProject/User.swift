@@ -84,8 +84,17 @@ class User: NSObject {
         for (key, value) in locationDict{
             newLocationDict[key] = "\(value)"
         }
-        self.location = Array(newLocationDict.values).joined(separator: " ")
-            
+        if let street = newLocationDict["street"],
+            let city = newLocationDict["city"],
+            let state = newLocationDict["state"],
+            let postcode = newLocationDict["postcode"]{
+            self.location = street + " " + city + " " + state + " " + postcode
+        } else {
+            self.location = ""
+        }
+        //self.location = Array(newLocationDict.values).joined(separator: " ")
+
+        
         self.email = dict["email"] as? String ?? ""
         self.login = dict["login"] as? [String:String] ?? [:]
         
