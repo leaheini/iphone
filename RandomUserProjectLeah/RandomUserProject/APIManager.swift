@@ -25,7 +25,6 @@ class APIManager: NSObject {
         Alamofire.request(baseURL, method: .get, parameters: params).responseJSON { (dataRes) in
             
             guard let json = dataRes.result.value as? JSON else{
-                //notify about the error
                 Toast(text: "Error download the data", delay: Delay.short, duration: Delay.long).show()
                 completion(nil, dataRes.error)
                 return

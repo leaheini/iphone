@@ -112,7 +112,7 @@ class DetailsViewController: UIViewController {
             event.calendar = store.defaultCalendarForNewEvents
             do {
                 try store.save(event, span: .thisEvent, commit: true)
-                Toast(text: "Saved Event", duration: Delay.long).show()
+                Toast(text: "Saved Birthday Event", duration: Delay.long).show()
             } catch {
                 Toast(text: "Failed to save event with error : \(error)", duration: Delay.long).show()
             }
@@ -172,7 +172,7 @@ extension DetailsViewController : MFMailComposeViewControllerDelegate{
         
         configuredMailComposeViewController { (controller) in
             guard let controller = controller else{
-                Toast(text: "Cannot send a mail", duration: Delay.long).show()
+                Toast(text: "Your device cannot send an email", duration: Delay.long).show()
                 return
             }
             
